@@ -19,7 +19,7 @@
 							<option value="1">This Week</option>
 							<option value="2">Last Week</option>
 							<option value="3">This Year</option>
-							<option value="3">Last Year</option>
+							<option value="4">Last Year</option>
 							<option value="-1">All</option>
 						</select>
 					</form>
@@ -94,3 +94,6 @@
 		font-size: 3rem;
 	}
 </style>
+<script>
+	document.querySelector('[name="filterRecord"]').value = <?php echo $filterRecord ?>;
+</script>
