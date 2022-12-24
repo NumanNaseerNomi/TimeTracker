@@ -6,7 +6,8 @@ switch($filterRecord)
 {
     case 'today':
     {
-        $sql = "SELECT * FROM Records ORDER BY ID DESC LIMIT 1";
+        $today = date("Y-m-d");
+        $sql = "SELECT * FROM Records WHERE checkin >= '$today' ORDER BY ID DESC";
         break;
     }
     case 'thisWeek':
@@ -35,3 +36,13 @@ switch($filterRecord)
         break;
     }
 }
+
+$query = mysqli_query($conn,$sql);
+$record = [];
+
+while($row = mysqli_fetch_assoc($query))
+{
+    $record[] = $row;
+}
+
+// var_dump($record);
