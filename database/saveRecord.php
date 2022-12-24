@@ -11,9 +11,21 @@ $sql = "SELECT * FROM Records ORDER BY ID DESC LIMIT 1";
 $query = mysqli_query($conn, $sql);
 $record = mysqli_fetch_assoc($query);
 
-if(is_null($record['checkout']))
+if(!empty($record) && is_null($record['checkout']))
 {
-    echo "update";
+    $id = $record['id'];
+    $sql = "UPDATE Records SET checkout = '$timestamp' WHERE id = '$id'";
+    
+    if(mysqli_query($conn, $sql))
+	{
+        mysqli_close($conn);
+		header('location:../index.php');
+	}
+	else
+	{
+        mysqli_close($conn);
+		echo("Error: " . $sql . "<br>" . mysqli_error($conn));
+	}
 }
 else
 {
