@@ -1,3 +1,10 @@
+<?php
+	include "./database/connectDB.php";
+
+	$sql = "SELECT * FROM Records ORDER BY ID DESC LIMIT 1";
+	$query = mysqli_query($conn, $sql);
+	$record = mysqli_fetch_assoc($query);
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,12 +24,15 @@
 							<input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" />
 							<input type="date" id="datePicker" name="date" hidden/>
 						</div>
-						<button type="submit" class="btn btn-primary btn-lg m-4">
-							<i class="far fa-clock"></i> Clock In
-						</button>
-						<button type="button" class="btn btn-primary btn-lg m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-							<i class="far fa-clock"></i> Clock Out
-						</button>
+						<?php if($record['checkout']) { ?>
+							<button type="submit" class="btn btn-primary btn-lg m-4">
+								<i class="far fa-clock"></i> Clock In
+							</button>
+						<?php } else { ?>
+							<button type="button" class="btn btn-primary btn-lg m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+								<i class="far fa-clock"></i> Clock Out
+							</button>
+						<?php }?>
 						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
