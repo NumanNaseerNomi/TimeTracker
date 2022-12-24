@@ -33,10 +33,27 @@
 					</div>
 
 					<div class="card">
-  <div class="card-body">
-    This is some text within a card body.
-  </div>
-</div>
+						<div class="card-body">
+							
+
+						<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Time In</th>
+      <th scope="col">Time Out</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+						</div>
+					</div>
 
 					<div class="form-check form-switch pt-5">
 						<label class="form-check-label" for="flexSwitchCheckDefault">
