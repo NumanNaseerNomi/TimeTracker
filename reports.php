@@ -20,10 +20,16 @@
 						<option value="3">Last Year</option>
 						<option value="3">All</option>
 					</select>
-					<span class="h4">March 14, 2022</span>
-					<!-- <button type="button" class="btn btn-link">
-						<i class="far fa-clock"></i>
-					</button> -->
+					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="btn-group" role="group" aria-label="First group">
+							<span class="h4">March 14, 2022</span>
+						</div>
+						<div class="input-group">
+							<button type="button" class="btn btn-link">
+								<i class="fas fa-file-download text-dark"></i>
+							</button>
+						</div>
+					</div>
 					<div class="card bg-light m-4 mx-5">
 						<div class="card-body mx-1">
 							<p class="timeSize mb-0">44</p>
