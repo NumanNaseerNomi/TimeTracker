@@ -36,16 +36,14 @@
 			<div class="modal-header">
 				<h1 class="modal-title fs-5" id="staticBackdropLabel">Description</h1>
 			</div>
-			<form method="post" action="saveRecord.php">
-				<div class="modal-body">
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-					<button type="submit" class="btn btn-primary">Save</button>
-				</div>
+			<div class="modal-body">
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 			</div>
-		</form>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+				<button type="submit" class="btn btn-primary">Save</button>
+			</div>
+		</div>
 	</div>
 </div>
 
