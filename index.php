@@ -14,7 +14,8 @@
 					<h1 class="p-5">Time Tracker</h1>
 					<form method="post" action="database/saveRecord.php">
 						<div class="pt-5">
-							<input class="timeSize border-0 pt-5" id="timePicker" type="time" />
+							<input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" />
+							<input type="date" id="datePicker" name="date" />
 						</div>
 						<button type="submit" class="btn btn-primary btn-lg m-4">
 							<i class="far fa-clock"></i> Clock In
@@ -29,7 +30,7 @@
 										<h1 class="modal-title fs-5" id="staticBackdropLabel">Description</h1>
 									</div>
 									<div class="modal-body">
-										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
@@ -63,6 +64,10 @@
 	}
 </style>
 <script>
-	const time = new Date().toTimeString().split(' ')[0].split(':');
+	const timestamp = new Date();
+	const month = timestamp.getMonth() + 1;
+	const time = timestamp.toTimeString().split(' ')[0].split(':');
+	
 	document.querySelector('#timePicker').value = time[0] + ':' + time[1];
+	document.querySelector('#datePicker').value = timestamp.getFullYear() + "-" + month + "-" + timestamp.getDate();
 </script>
