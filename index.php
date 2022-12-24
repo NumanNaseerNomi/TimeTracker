@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-md-6 offset-md-3">
 					<h1 class="p-5">Time Tracker</h1>
-					<form method="post" action="saveRecord.php">
+					<form method="post" action="database/saveRecord.php">
 						<div class="pt-5">
 							<input class="timeSize border-0 pt-5" id="timePicker" type="time" />
 						</div>
