@@ -40,43 +40,43 @@
 						</div>
 					</div>
 					<?php foreach($records as $record) { ?>
-					<div class="card my-3">
-						<div class="card-header">
-							<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-								<div class="btn-group mt-2" role="group" aria-label="First group">March 14, 2022</div>
-								<div class="input-group">
-									<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										<div class="btn-group dropstart">
-											<button type="button" class="btn btn-link dropdown-toggle text-decoration-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
-												<i class="fas fa-ellipsis-h"></i>
-											</button>
-											<ul class="dropdown-menu">
-												<li><a class="dropdown-item" href="#">Action</a></li>
-											</ul>
+						<div class="card my-3">
+							<div class="card-header">
+								<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+									<div class="btn-group mt-2" role="group" aria-label="First group">March 14, 2022</div>
+									<div class="input-group">
+										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+											<div class="btn-group dropstart">
+												<button type="button" class="btn btn-link dropdown-toggle text-decoration-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fas fa-ellipsis-h"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Action</a></li>
+												</ul>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<div class="card-body pb-0">
+								<table class="table table-borderless">
+									<thead>
+										<tr>
+											<th scope="col">Time In</th>
+											<th scope="col">Time Out</th>
+											<th scope="col">Total</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>15:00</td>
+											<td>17:00</td>
+											<td>2:00</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
-						<div class="card-body pb-0">
-							<table class="table table-borderless">
-								<thead>
-									<tr>
-										<th scope="col">Time In</th>
-										<th scope="col">Time Out</th>
-										<th scope="col">Total</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>15:00</td>
-										<td>17:00</td>
-										<td>2:00</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
 					<?php } ?>
 				</div>
 			</div>
