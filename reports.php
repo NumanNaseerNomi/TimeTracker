@@ -67,15 +67,6 @@
 							</table>
 						</div>
 					</div>
-
-					<div class="form-check form-switch pt-5">
-						<label class="form-check-label" for="flexSwitchCheckDefault">
-							<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"> Manual Time
-						</label>
-					</div>
-					<button type="button" class="btn btn-primary btn-lg m-4">
-						<i class="far fa-clock"></i> Clock In
-					</button>
 				</div>
 			</div>
 		</div>
@@ -92,11 +83,6 @@
 	.timeSize
 	{
 		font-size: 3rem;
-	}
-
-	.bg-skyBlue
-	{
-		background-color: lightskyblue;
 	}
 </style>
 <script type="text/javascript" src="./plugins/bootstrap/bootstrap.bundle.min.js"></script>
