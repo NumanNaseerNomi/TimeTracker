@@ -15,30 +15,19 @@ if(!empty($record) && is_null($record['checkout']))
 {
     $id = $record['id'];
     $sql = "UPDATE Records SET checkout = '$timestamp', description = '$description' WHERE id = '$id'";
-    
-    if(mysqli_query($conn, $sql))
-	{
-        mysqli_close($conn);
-		header('location:../index.php');
-	}
-	else
-	{
-        mysqli_close($conn);
-		echo("Error: " . $sql . "<br>" . mysqli_error($conn));
-	}
 }
 else
 {
 	$sql = "INSERT INTO Records (checkin) VALUES ('$timestamp')";
+}
 
-    if(mysqli_query($conn, $sql))
-	{
-        mysqli_close($conn);
-		header('location:../index.php');
-	}
-	else
-	{
-        mysqli_close($conn);
-		echo("Error: " . $sql . "<br>" . mysqli_error($conn));
-	}
+if(mysqli_query($conn, $sql))
+{
+    mysqli_close($conn);
+    header('location:../index.php');
+}
+else
+{
+    mysqli_close($conn);
+    echo("Error: " . $sql . "<br>" . mysqli_error($conn));
 }
