@@ -14,7 +14,7 @@
 					<h1 class="p-5">Time Tracker</h1>
 					<!-- <h1 class="py-5 timeSize"><strong>18:35</strong></h1> -->
 					<div class="pt-5">
-						<input class="timeSize border-0 pt-5" id="timePicker" type="time" value="10:40" />
+						<input class="timeSize border-0 pt-5" id="timePicker" type="time" />
 					</div>
 					<!-- <div class="form-check form-switch pt-5">
 						<label class="form-check-label" for="flexSwitchCheckDefault">
@@ -43,6 +43,11 @@
 	.timeSize
 	{
 		font-size: 5rem;
+	}
+
+	input[type="time"]::-webkit-calendar-picker-indicator
+	{
+		font-size: 3rem;
 	}
 </style>
 <script>
