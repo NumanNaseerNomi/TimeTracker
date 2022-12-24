@@ -39,7 +39,8 @@
 							<span>HOURS</span>
 						</div>
 					</div>
-					<div class="card">
+					<?php foreach($records as $record) { ?>
+					<div class="card my-3">
 						<div class="card-header">
 							<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 								<div class="btn-group mt-2" role="group" aria-label="First group">March 14, 2022</div>
@@ -76,6 +77,7 @@
 							</table>
 						</div>
 					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
