@@ -12,14 +12,16 @@
 			<div class="row">
 				<div class="col-md-4 offset-md-4">
 					<h1 class="p-5">Reports</h1>
-					<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-						<option selected>Today</option>
-						<option value="1">This Week</option>
-						<option value="2">Last Week</option>
-						<option value="3">This Year</option>
-						<option value="3">Last Year</option>
-						<option value="3">All</option>
-					</select>
+					<form method="post" action="database/saveRecord.php">
+						<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+							<option selected>Today</option>
+							<option value="1">This Week</option>
+							<option value="2">Last Week</option>
+							<option value="3">This Year</option>
+							<option value="3">Last Year</option>
+							<option value="3">All</option>
+						</select>
+					</form>
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 						<div class="btn-group" role="group" aria-label="First group">
 							<span class="h4">March 14, 2022</span>
