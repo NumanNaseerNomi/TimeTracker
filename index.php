@@ -38,15 +38,7 @@
 			</div>
 			<form method="post" action="saveRecord.php">
 				<div class="modal-body">
-<div class="mb-3">
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
-
-
-
-
-
-
+					<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
