@@ -34,24 +34,22 @@
 
 					<div class="card">
 						<div class="card-body">
-							
-
-						<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Time In</th>
-      <th scope="col">Time Out</th>
-      <th scope="col">Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">Time In</th>
+										<th scope="col">Time Out</th>
+										<th scope="col">Total</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mark</td>
+										<td>Otto</td>
+										<td>@mdo</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 
