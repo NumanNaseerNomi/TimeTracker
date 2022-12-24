@@ -26,7 +26,7 @@
 						</div>
 						<div class="input-group">
 							<button type="button" class="btn btn-link">
-								<i class="fas fa-file-download text-dark"></i>
+								<i class="fas fa-file-download text-dark fs-5"></i>
 							</button>
 						</div>
 					</div>
