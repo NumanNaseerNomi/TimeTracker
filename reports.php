@@ -25,12 +25,18 @@
 						<i class="far fa-clock"></i>
 					</button> -->
 
-					<div class="card m-4 mx-5">
+					<div class="card bg-skyBlue m-4 mx-5">
 						<div class="card-body mx-1">
 							<p class="timeSize mb-0">44</p>
 							<span>HOURS</span>
 						</div>
 					</div>
+
+					<div class="card">
+  <div class="card-body">
+    This is some text within a card body.
+  </div>
+</div>
 
 					<div class="form-check form-switch pt-5">
 						<label class="form-check-label" for="flexSwitchCheckDefault">
@@ -56,5 +62,10 @@
 	.timeSize
 	{
 		font-size: 3rem;
+	}
+
+	.bg-skyBlue
+	{
+		background-color: lightskyblue;
 	}
 </style>
