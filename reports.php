@@ -33,8 +33,9 @@
 					</div>
 
 					<div class="card">
-						<div class="card-body">
-							<table class="table">
+					<div class="card-header">March 14, 2022</div>
+						<div class="card-body pb-0">
+							<table class="table table-borderless">
 								<thead>
 									<tr>
 										<th scope="col">Time In</th>
@@ -44,9 +45,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
+										<td>15:00</td>
+										<td>17:00</td>
+										<td>2:00</td>
 									</tr>
 								</tbody>
 							</table>
