@@ -38,11 +38,11 @@ switch($filterRecord)
 }
 
 $query = mysqli_query($conn,$sql);
-$record = [];
+$records = [];
 
 while($row = mysqli_fetch_assoc($query))
 {
-    $record[] = $row;
+    $records[] = $row;
 }
 
 // var_dump($record);
