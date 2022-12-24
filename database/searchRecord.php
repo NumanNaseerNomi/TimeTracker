@@ -1,5 +1,6 @@
 <?php
 $filterRecord = $_POST['filterRecord'] ?? 'today';
+include "connectDB.php";
 
 switch($filterRecord)
 {
