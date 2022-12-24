@@ -1,0 +1,38 @@
+
+.mySlides
+{
+	display: none;
+}
+
+.slideImg
+{
+	vertical-align: middle;
+	border-radius: 7px;
+	width: 100%;
+}
+
+/* Slideshow container */
+.slideShow
+{
+	position: static;
+	margin: auto;
+}
+
+/* Fading animation */
+.fade
+{
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade
+{
+	from
+	{
+		opacity: .4
+	}
+	to
+	{
+		opacity: 1
+	}
+}
