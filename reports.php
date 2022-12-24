@@ -15,12 +15,12 @@
 					<h1 class="p-5">Reports</h1>
 					<form method="post" action="reports.php">
 						<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="filterRecord" onchange="this.form.submit()">
-							<option value="0">Today</option>
-							<option value="1">This Week</option>
-							<option value="2">Last Week</option>
-							<option value="3">This Year</option>
-							<option value="4">Last Year</option>
-							<option value="-1">All</option>
+							<option value="today">Today</option>
+							<option value="thisWeek">This Week</option>
+							<option value="lastWeek">Last Week</option>
+							<option value="thisYear">This Year</option>
+							<option value="lastYear">Last Year</option>
+							<option value="all">All</option>
 						</select>
 					</form>
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
@@ -95,5 +95,5 @@
 	}
 </style>
 <script>
-	document.querySelector('[name="filterRecord"]').value = <?php echo $filterRecord ?>;
+	document.querySelector('[name="filterRecord"]').value = <?php echo  "'" . $filterRecord . "'"?>;
 </script>
