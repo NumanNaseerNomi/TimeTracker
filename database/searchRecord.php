@@ -1,5 +1,6 @@
 <?php
+$filterRecord = $_POST["filterRecord"];
 if(true)
 {
-    var_dump(1);
+    var_dump($filterRecord);
 }
