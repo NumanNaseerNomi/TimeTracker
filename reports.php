@@ -43,7 +43,7 @@
 						<div class="card my-3">
 							<div class="card-header">
 								<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-									<div class="btn-group mt-2" role="group" aria-label="First group">March 14, 2022</div>
+									<div class="btn-group mt-2" role="group" aria-label="First group"></div>
 									<div class="input-group">
 										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 											<div class="btn-group dropstart">
@@ -69,9 +69,17 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>15:00</td>
-											<td>17:00</td>
-											<td>2:00</td>
+											<td><?php echo str_replace(" ", "<br/>", $record['checkin']) ?></td>
+											<td><?php echo str_replace(" ", "<br/>", $record['checkout']) ?></td>
+											<td>
+												<?php
+													$seconds = strtotime($record['checkout']) - strtotime($record['checkin']);
+													$hours = floor($seconds / 3600) ? floor($seconds / 3600) : '00';
+													$mins = floor($seconds / 60 % 60) != 0 ? floor($seconds / 60 % 60) : '00';
+
+													echo $hours . ':' . $mins;
+												?>
+											</td>
 										</tr>
 									</tbody>
 								</table>
