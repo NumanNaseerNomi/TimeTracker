@@ -24,9 +24,9 @@
 					<button type="button" class="btn btn-primary btn-lg m-4">
 						<i class="far fa-clock"></i> Clock In
 					</button>
-					<button type="button" class="btn btn-primary btn-lg m-4">
+					<!-- <button type="button" class="btn btn-primary btn-lg m-4">
 						<i class="far fa-clock"></i> Clock Out
-					</button>
+					</button> -->
 				</div>
 			</div>
 		</div>
