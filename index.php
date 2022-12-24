@@ -34,13 +34,23 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="staticBackdropLabel">Clock Out</h1>
+				<h1 class="modal-title fs-5" id="staticBackdropLabel">Description</h1>
 			</div>
 			<form method="post" action="saveRecord.php">
-				<div class="modal-body">Clock Out:</div>
+				<div class="modal-body">
+<div class="mb-3">
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+
+
+
+
+
+
+				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-					<button type="button" class="btn btn-primary">Save</button>
+					<button type="submit" class="btn btn-primary">Save</button>
 				</div>
 			</div>
 		</form>
