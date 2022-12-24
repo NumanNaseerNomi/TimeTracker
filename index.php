@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-md-6 offset-md-3">
 					<h1 class="p-5">Time Tracker</h1>
-					<h1 class="py-5"><strong>18:35</strong></h1>
+					<h1 class="py-5 timeSize"><strong>18:35</strong></h1>
 					<div class="form-check form-switch pt-5">
 						<label class="form-check-label" for="flexSwitchCheckDefault">
 							<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"> Manual Time
@@ -32,5 +32,10 @@
 	html,body
 	{
 		height: 100%;
+	}
+
+	.timeSize
+	{
+		font-size: 5rem;
 	}
 </style>
