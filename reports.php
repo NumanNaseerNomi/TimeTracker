@@ -24,25 +24,27 @@
 					<!-- <button type="button" class="btn btn-link">
 						<i class="far fa-clock"></i>
 					</button> -->
-
-					<div class="card bg-skyBlue m-4 mx-5">
+					<div class="card bg-light m-4 mx-5">
 						<div class="card-body mx-1">
 							<p class="timeSize mb-0">44</p>
 							<span>HOURS</span>
 						</div>
 					</div>
-
 					<div class="card">
 						<div class="card-header">
-							March 14, 2022
-							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-								<div class="btn-group dropstart">
-									<button type="button" class="btn btn-link dropdown-toggle text-decoration-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
-										<i class="fas fa-ellipsis-h"></i>
-									</button>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Action</a></li>
-									</ul>
+							<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+								<div class="btn-group mt-2" role="group" aria-label="First group">March 14, 2022</div>
+								<div class="input-group">
+									<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+										<div class="btn-group dropstart">
+											<button type="button" class="btn btn-link dropdown-toggle text-decoration-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="fas fa-ellipsis-h"></i>
+											</button>
+											<ul class="dropdown-menu">
+												<li><a class="dropdown-item" href="#">Action</a></li>
+											</ul>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
