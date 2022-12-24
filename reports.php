@@ -1,4 +1,7 @@
-<?php include "./database/searchRecord.php"; ?>
+<?php 
+	include "./database/searchRecord.php";
+	$totalSeconds = 0;
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,7 +38,7 @@
 					</div>
 					<div class="card bg-light m-4 mx-5">
 						<div class="card-body mx-1">
-							<p class="timeSize mb-0">44</p>
+							<p class="timeSize mb-0"></p>
 							<span>HOURS</span>
 						</div>
 					</div>
@@ -74,6 +77,7 @@
 											<td>
 												<?php
 													$seconds = strtotime($record['checkout']) - strtotime($record['checkin']);
+													$totalSeconds += $seconds;
 													$hours = floor($seconds / 3600) ? floor($seconds / 3600) : '00';
 													$mins = floor($seconds / 60 % 60) != 0 ? floor($seconds / 60 % 60) : '00';
 
@@ -105,5 +109,6 @@
 	}
 </style>
 <script>
-	document.querySelector('[name="filterRecord"]').value = <?php echo  "'" . $filterRecord . "'"?>;
+	document.querySelector('[name="filterRecord"]').value = <?php echo  "'" . $filterRecord . "'" ?>;
+	document.querySelector('.timeSize').innerHTML = <?php echo floor($totalSeconds / 3600) ?>;
 </script>
