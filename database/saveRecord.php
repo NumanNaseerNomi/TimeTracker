@@ -14,7 +14,7 @@ $record = mysqli_fetch_assoc($query);
 if(!empty($record) && is_null($record['checkout']))
 {
     $id = $record['id'];
-    $sql = "UPDATE Records SET checkout = '$timestamp' WHERE id = '$id'";
+    $sql = "UPDATE Records SET checkout = '$timestamp', description = '$description' WHERE id = '$id'";
     
     if(mysqli_query($conn, $sql))
 	{
