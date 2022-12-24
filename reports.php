@@ -79,7 +79,7 @@
 		<?php include "./components/navbar.php"; ?>
 	</body>
 </html>
-
+<script type="text/javascript" src="./plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <style>
 	html,body
 	{
@@ -91,4 +91,3 @@
 		font-size: 3rem;
 	}
 </style>
-<script type="text/javascript" src="./plugins/bootstrap/bootstrap.bundle.min.js"></script>
