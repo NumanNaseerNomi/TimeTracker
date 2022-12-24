@@ -1,5 +1,5 @@
 <?php
-$filterRecord = $_POST["filterRecord"] ?? 0;
+$filterRecord = $_POST['filterRecord'] ?? 'today';
 
 // if($filterRecord == 0)
 // {
