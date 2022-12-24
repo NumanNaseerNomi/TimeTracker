@@ -7,7 +7,7 @@ switch($filterRecord)
     case 'today':
     {
         $today = date("Y-m-d");
-        $sql = "SELECT * FROM Records WHERE checkin >= '$today' ORDER BY ID DESC";
+        $sql = "SELECT * FROM Records WHERE checkin >= '$today' && checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'thisWeek':
