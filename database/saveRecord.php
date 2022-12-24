@@ -11,7 +11,7 @@ $sql = "SELECT * FROM Records ORDER BY ID DESC LIMIT 1";
 $query = mysqli_query($conn, $sql);
 $record = mysqli_fetch_assoc($query);
 
-if(!is_null($record['checkout']))
+if(is_null($record['checkout']))
 {
     echo "update";
 }
