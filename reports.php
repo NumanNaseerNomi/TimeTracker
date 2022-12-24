@@ -33,7 +33,19 @@
 					</div>
 
 					<div class="card">
-					<div class="card-header">March 14, 2022</div>
+						<div class="card-header">
+							March 14, 2022
+							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+								<div class="btn-group dropstart">
+									<button type="button" class="btn btn-link dropdown-toggle text-decoration-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+										<i class="fas fa-ellipsis-h"></i>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Action</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
 						<div class="card-body pb-0">
 							<table class="table table-borderless">
 								<thead>
@@ -85,3 +97,4 @@
 		background-color: lightskyblue;
 	}
 </style>
+<script type="text/javascript" src="./plugins/bootstrap/bootstrap.bundle.min.js"></script>
