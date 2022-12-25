@@ -112,13 +112,14 @@
 	}
 </style>
 <script>
-	document.querySelector('[name="filterRecord"]').value = <?php echo  "'" . $filterRecord . "'" ?>;
+	let filterOption = <?php echo  "'" . $filterRecord . "'" ?>;
+	document.querySelector('[name="filterRecord"]').value = filterOption;
 	document.querySelector('.timeSize').innerHTML = <?php echo floor($totalSeconds / 3600) ?>;
 
 	function downloadData()
     {
-		let fileData = {key: 'value'};
-		let fileName = 'TimeTrackerRecord.json';
+		let fileData = <?php echo json_encode($records) ?>;
+		let fileName = 'TimeTrackerRecord(' + filterOption + ').json';
 		let fileType = 'application/json';
 
         let file = new Blob([JSON.stringify(fileData)], {type: fileType});
@@ -135,5 +136,5 @@
             a.download = fileName;
             a.click();
         }
-     }
+    }
 </script>
