@@ -1,8 +1,5 @@
 <?php
 $filterRecord = $_POST['filterRecord'] ?? 'today';
-$timestamp = $_POST['timestamp'] ?? date("Y-m-d");
-
-// die($timestamp);
 include "connectDB.php";
 
 switch($filterRecord)
