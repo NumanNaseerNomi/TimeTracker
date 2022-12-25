@@ -7,7 +7,7 @@ $description = empty($_POST["description"]) ? '' : (', description = ' . "'" . $
 
 require_once("connectDB.php");
 
-$sql = "SELECT * FROM records ORDER BY id DESC LIMIT 1";
+$sql = "SELECT SQL_NO_CACHE * FROM records ORDER BY id DESC LIMIT 1";
 $query = mysqli_query($conn, $sql);
 $record = mysqli_fetch_assoc($query);
 
