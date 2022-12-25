@@ -60,11 +60,69 @@
 												</button>
 												<ul class="dropdown-menu">
 													<li><a class="dropdown-item" href="#">Edit</a></li>
-													<li><a class="dropdown-item" href="#">Delete</a></li>
+													<li>
+														<a class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
+													</li>
 												</ul>
 											</div>
 										</div>
 									</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Do you realy want to delete this record?</h1>
+      </div>
+      <div class="modal-body">
+		
+
+	  <div class="card-body pb-0">
+								<table class="table table-borderless">
+									<thead>
+										<tr>
+											<th scope="col">Time In</th>
+											<th scope="col">Time Out</th>
+											<th scope="col">Total</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td title="<?php echo date('d-m-Y H:i', strtotime($record['checkin'])) ?>">
+												<?php echo date('H:i', strtotime($record['checkin'])) ?>
+											</td>
+											<td title="<?php echo date('d-m-Y H:i', strtotime($record['checkout'])) ?>">
+												<?php echo date('H:i', strtotime($record['checkout'])) ?>
+											</td>
+											<td>
+												<?php
+													$seconds = strtotime($record['checkout']) - strtotime($record['checkin']);
+													$hours = floor($seconds / 3600) ? floor($seconds / 3600) : '00';
+													$mins = floor($seconds / 60 % 60) != 0 ? floor($seconds / 60 % 60) : '00';
+
+													echo $hours . ':' . $mins;
+												?>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<p><?php echo $record['description'] ?></p>
+							</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 								</div>
 							</div>
 							<div class="card-body pb-0">
