@@ -24,13 +24,13 @@
 							<input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" />
 							<input type="date" id="datePicker" name="date" hidden/>
 						</div>
-						<?php if(empty($record) || !is_null($record['checkout'])) { ?>
-							<button type="submit" class="btn btn-primary btn-lg m-4">
-								<i class="far fa-clock"></i> Clock In
-							</button>
-						<?php } elseif(is_null($record['checkout'])) { ?>
+						<?php if(!empty($record) && is_null($record['checkout'])) { ?>
 							<button type="button" class="btn btn-primary btn-lg m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 								<i class="far fa-clock"></i> Clock Out
+							</button>
+						<?php } else { ?>
+							<button type="submit" class="btn btn-primary btn-lg m-4">
+								<i class="far fa-clock"></i> Clock In
 							</button>
 						<?php }?>
 						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
