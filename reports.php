@@ -75,10 +75,12 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td title="<?php echo date('H:i d-m-Y', strtotime($record['checkin'])) ?>">
+											<td title="<?php echo date('d-m-Y H:i', strtotime($record['checkin'])) ?>">
 												<?php echo date('H:i', strtotime($record['checkin'])) ?>
 											</td>
-											<td><?php echo str_replace(" ", "<br/>", $record['checkout']) ?></td>
+											<td title="<?php echo date('d-m-Y H:i', strtotime($record['checkout'])) ?>">
+												<?php echo date('H:i', strtotime($record['checkout'])) ?>
+											</td>
 											<td>
 												<?php
 													$seconds = strtotime($record['checkout']) - strtotime($record['checkin']);
@@ -104,14 +106,30 @@
 </html>
 <script type="text/javascript" src="./plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <style>
-	html,body
+	html,body { height: 100%; }
+	.timeSize { font-size: 3rem; }
+	
+	[title]
 	{
-		height: 100%;
+		border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+		border-radius:2px;
+		position: relative;
 	}
 
-	.timeSize
+	body.touched [title] > * { user-select: none; }
+	body.touched [title]:hover > * { user-select: auto }
+
+	body.touched [title]:hover:after
 	{
-		font-size: 3rem;
+		position: absolute;
+		top: 100%;
+		right: -10%;
+		content: attr(title);
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		background-color: white;
+		box-shadow: 1px 1px 3px;
+		padding: 0.3em;
+		z-index: 1;
 	}
 </style>
 <script>
@@ -140,4 +158,6 @@
             a.click();
         }
     }
+	
+	document.body.addEventListener('touchstart', () => { document.body.classList.add('touched'); });
 </script>
