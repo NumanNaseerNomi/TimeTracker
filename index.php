@@ -1,7 +1,7 @@
 <?php
 	include "./database/connectDB.php";
 
-	$sql = "SELECT * FROM Records ORDER BY ID DESC LIMIT 1";
+	$sql = "SELECT * FROM records ORDER BY id DESC LIMIT 1";
 	$query = mysqli_query($conn, $sql);
 	$record = mysqli_fetch_assoc($query);
 ?>
