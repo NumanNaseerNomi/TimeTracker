@@ -4,7 +4,7 @@
 	$sql = "SELECT * FROM records ORDER BY id DESC LIMIT 1";
 	$query = mysqli_query($conn, $sql);
 	$record = mysqli_fetch_assoc($query);
-	var_dump($record);
+	echo isset($record);
 ?>
 <!DOCTYPE html>
 <html>
