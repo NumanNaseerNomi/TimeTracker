@@ -1,9 +1,10 @@
 <?php
-	include "./database/connectDB.php";
+	require_once("./database/connectDB.php");
 
 	$sql = "SELECT * FROM records ORDER BY id DESC LIMIT 1";
 	$query = mysqli_query($conn, $sql);
 	$record = mysqli_fetch_assoc($query);
+	var_dump($record);
 ?>
 <!DOCTYPE html>
 <html>
