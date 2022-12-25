@@ -6,7 +6,7 @@ $description = empty($_POST["description"]) ? '' : (', description = ' . "'" . $
 
 include "connectDB.php";
 
-$sql = "UPDATE Records SET checkin = '$checkin', checkout = '$checkout'" . $description . "WHERE id = '$id'";
+$sql = "UPDATE records SET checkin = '$checkin', checkout = '$checkout'" . $description . "WHERE id = '$id'";
 
 if(mysqli_query($conn, $sql))
 {
