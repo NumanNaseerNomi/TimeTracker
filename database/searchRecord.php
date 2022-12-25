@@ -33,12 +33,17 @@ switch($filterRecord)
     }
     case 'lastMonth':
     {
-        var_dump($filterRecord);
+        $fromDate = date('Y-m-d', strtotime('first day of last month'));
+        $toDate = date('Y-m-d', strtotime('last day of last month'));
+        $sql = "SELECT * FROM Records WHERE checkin BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'thisYear':
     {
-        var_dump($filterRecord);
+        $fromDate = date('Y-m-d', strtotime('first day of this month'));
+        $toDate = date('Y-m-d', strtotime('last day of this month'));
+        $sql = "SELECT * FROM Records WHERE checkin BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY ID DESC";
+        die($fromDate);
         break;
     }
     case 'lastYear':
