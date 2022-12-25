@@ -72,5 +72,3 @@ while($row = mysqli_fetch_assoc($query))
 {
     $records[] = $row;
 }
-
-// var_dump($records);
