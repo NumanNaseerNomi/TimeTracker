@@ -5,7 +5,7 @@ $time = $_POST["time"];
 $timestamp = date("Y-m-d H:i:s", strtotime($date . ' ' . $time));
 $description = empty($_POST["description"]) ? '' : (', description = ' . "'" . $_POST["description"]) . "'";
 
-include "connectDB.php";
+require_once("connectDB.php");
 
 $sql = "SELECT * FROM records ORDER BY id DESC LIMIT 1";
 $query = mysqli_query($conn, $sql);
