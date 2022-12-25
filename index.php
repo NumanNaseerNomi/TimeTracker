@@ -82,3 +82,4 @@
 	document.querySelector('#timePicker').value = time[0] + ':' + time[1];
 	document.querySelector('#datePicker').value = timestamp.getFullYear() + "-" + month + "-" + timestamp.getDate();
 </script>
+<?php mysqli_free_result($result); ?>
