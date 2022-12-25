@@ -67,61 +67,51 @@
 											</div>
 										</div>
 									</div>
+									<div class="modal fade" id="deleteRecord<?php echo $record['id'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteRecordLabel<?php echo $record['id'] ?>" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h1 class="modal-title fs-5" id="deleteRecordLabel<?php echo $record['id'] ?>">Do you realy want to delete this record?</h1>
+												</div>
+												<div class="modal-body">
+													<div class="card-body pb-0">
+														<table class="table table-borderless">
+															<thead>
+																<tr>
+																	<th scope="col">Time In</th>
+																	<th scope="col">Time Out</th>
+																	<th scope="col">Total</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td><?php echo date('H:i d-m-Y', strtotime($record['checkin'])) ?></td>
+																	<td><?php echo date('H:i d-m-Y', strtotime($record['checkout'])) ?></td>
+																	<td>
+																		<?php
+																			$seconds = strtotime($record['checkout']) - strtotime($record['checkin']);
+																			$hours = floor($seconds / 3600) ? floor($seconds / 3600) : '00';
+																			$mins = floor($seconds / 60 % 60) != 0 ? floor($seconds / 60 % 60) : '00';
 
-<!-- Modal -->
-<div class="modal fade" id="deleteRecord<?php echo $record['id'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteRecordLabel<?php echo $record['id'] ?>" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="deleteRecordLabel<?php echo $record['id'] ?>">Do you realy want to delete this record?</h1>
-      </div>
-      <div class="modal-body">
-		
-
-	  <div class="card-body pb-0">
-								<table class="table table-borderless">
-									<thead>
-										<tr>
-											<th scope="col">Time In</th>
-											<th scope="col">Time Out</th>
-											<th scope="col">Total</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td><?php echo date('H:i d-m-Y', strtotime($record['checkin'])) ?></td>
-											<td><?php echo date('H:i d-m-Y', strtotime($record['checkout'])) ?></td>
-											<td>
-												<?php
-													$seconds = strtotime($record['checkout']) - strtotime($record['checkin']);
-													$hours = floor($seconds / 3600) ? floor($seconds / 3600) : '00';
-													$mins = floor($seconds / 60 % 60) != 0 ? floor($seconds / 60 % 60) : '00';
-
-													echo $hours . ':' . $mins;
-												?>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<p><?php echo $record['description'] ?></p>
-							</div>
-
-
-      </div>
-      <div class="modal-footer">
-	  <form method="post" action="database/deleteRecord.php">
-			<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
-			<button type="submit" class="btn btn-danger">Delete</button>
-			<input type="hidden" name="recordId" value="<?php echo $record['id'] ?>">
-		</form>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
+																			echo $hours . ':' . $mins;
+																		?>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+														<p><?php echo $record['description'] ?></p>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<form method="post" action="database/deleteRecord.php">
+														<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+														<button type="submit" class="btn btn-danger">Delete</button>
+														<input type="hidden" name="recordId" value="<?php echo $record['id'] ?>">
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="card-body pb-0">
