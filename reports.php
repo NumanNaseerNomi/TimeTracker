@@ -125,7 +125,7 @@
         let file = new Blob([JSON.stringify(fileData)], {type: fileType});
         let isIE = /*@cc_on!@*/false || !!document.documentMode;
 
-        if (isIE)
+        if(isIE)
         {
             window.navigator.msSaveOrOpenBlob(file, fileName);
         }
