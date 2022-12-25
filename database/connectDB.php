@@ -8,13 +8,13 @@ $env =
 	'dbName' => 'liorblin_time_tracker_new',
 ];
 
-$env =
-[
-    'hostName' => 'localhost',
-	'userName' => 'root',
-	'password' => '',
-	'dbName' => 'TimeTracker',
-];
+// $env =
+// [
+//     'hostName' => 'localhost',
+// 	'userName' => 'root',
+// 	'password' => '',
+// 	'dbName' => 'TimeTracker',
+// ];
 
 // Create connection
 $conn = mysqli_connect($env['hostName'], $env['userName'], $env['password'], $env['dbName']);
