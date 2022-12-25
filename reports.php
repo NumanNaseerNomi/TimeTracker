@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div class="container text-center h-100">	
-			<div class="row">
+			<div class="row pb-5">
 				<div class="col-md-4 offset-md-4">
 					<h1 class="p-5">Reports</h1>
 					<form method="post" action="reports.php">
