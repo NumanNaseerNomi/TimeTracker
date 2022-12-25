@@ -61,7 +61,7 @@
 												<ul class="dropdown-menu">
 													<li><a class="dropdown-item" href="#">Edit</a></li>
 													<li>
-														<a class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</a>
+														<a class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#deleteRecord<?php echo $record['id'] ?>">Delete</a>
 													</li>
 												</ul>
 											</div>
@@ -69,11 +69,11 @@
 									</div>
 
 <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="deleteRecord<?php echo $record['id'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deleteRecordLabel<?php echo $record['id'] ?>" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Do you realy want to delete this record?</h1>
+        <h1 class="modal-title fs-5" id="deleteRecordLabel<?php echo $record['id'] ?>">Do you realy want to delete this record?</h1>
       </div>
       <div class="modal-body">
 		
@@ -89,12 +89,8 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td title="<?php echo date('d-m-Y H:i', strtotime($record['checkin'])) ?>">
-												<?php echo date('H:i', strtotime($record['checkin'])) ?>
-											</td>
-											<td title="<?php echo date('d-m-Y H:i', strtotime($record['checkout'])) ?>">
-												<?php echo date('H:i', strtotime($record['checkout'])) ?>
-											</td>
+											<td><?php echo date('H:i d-m-Y', strtotime($record['checkin'])) ?></td>
+											<td><?php echo date('H:i d-m-Y', strtotime($record['checkout'])) ?></td>
 											<td>
 												<?php
 													$seconds = strtotime($record['checkout']) - strtotime($record['checkin']);
