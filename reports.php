@@ -109,10 +109,10 @@
 
       </div>
       <div class="modal-footer">
-	  <form method="post" action="deleteRecord.php">
+	  <form method="post" action="database/deleteRecord.php">
 			<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
 			<button type="submit" class="btn btn-danger">Delete</button>
-			<input type="hidden"name="recordId" value="<?php echo $record['id'] ?>">
+			<input type="hidden" name="recordId" value="<?php echo $record['id'] ?>">
 		</form>
       </div>
     </div>
