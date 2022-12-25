@@ -75,7 +75,9 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td><?php echo str_replace(" ", "<br/>", $record['checkin']) ?></td>
+											<td title="<?php echo date('H:i d-m-Y', strtotime($record['checkin'])) ?>">
+												<?php echo date('H:i', strtotime($record['checkin'])) ?>
+											</td>
 											<td><?php echo str_replace(" ", "<br/>", $record['checkout']) ?></td>
 											<td>
 												<?php
