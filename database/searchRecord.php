@@ -47,12 +47,14 @@ switch($filterRecord)
     }
     case 'lastYear':
     {
-        var_dump($filterRecord);
+        $fromDate = date('Y-m-d', strtotime('first day of january last year'));
+        $toDate = date('Y-m-d', strtotime('last day of december last year'));
+        $sql = "SELECT * FROM Records WHERE checkin BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'all':
     {
-        var_dump($filterRecord);
+        $sql = "SELECT * FROM Records WHERE checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
 }
