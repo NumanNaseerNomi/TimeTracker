@@ -52,7 +52,7 @@
 									<div class="input-group">
 										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 											<div class="btn-group dropstart">
-												<button type="button" class="btn btn-link dropdown-toggle text-decoration-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
+												<button type="button" class="btn btn-link text-decoration-none text-dark" data-bs-toggle="dropdown" aria-expanded="false">
 													<i class="fas fa-ellipsis-h"></i>
 												</button>
 												<ul class="dropdown-menu">
