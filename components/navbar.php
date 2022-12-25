@@ -1,4 +1,4 @@
-<nav class="navbar sticky-bottom bg-light">
+<nav class="navbar fixed-bottom bg-light">
 	<div class="container text-center">
 		<span></span>
 		<span>
