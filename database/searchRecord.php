@@ -12,7 +12,9 @@ switch($filterRecord)
     }
     case 'thisWeek':
     {
-        var_dump($filterRecord);
+        $firstDayOfWeek = date('Y-m-d', strtotime('monday this week', time()));
+        $today = date("Y-m-d");
+        $sql = "SELECT * FROM Records WHERE checkin >= '$firstDayOfWeek' && checkin <= '$today' && checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'lastWeek':
