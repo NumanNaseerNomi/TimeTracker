@@ -33,7 +33,7 @@
 							<span class="h4">March 14, 2022</span>
 						</div>
 						<div class="input-group">
-							<button type="button" class="btn btn-link">
+							<button type="button" class="btn btn-link" onclick="downloadData()">
 								<i class="fas fa-file-download text-dark fs-5"></i>
 							</button>
 						</div>
@@ -114,4 +114,26 @@
 <script>
 	document.querySelector('[name="filterRecord"]').value = <?php echo  "'" . $filterRecord . "'" ?>;
 	document.querySelector('.timeSize').innerHTML = <?php echo floor($totalSeconds / 3600) ?>;
+
+	function downloadData()
+    {
+		let fileData = {key: 'value'};
+		let fileName = 'TimeTrackerRecord.json';
+		let fileType = 'application/json';
+
+        let file = new Blob([JSON.stringify(fileData)], {type: fileType});
+        let isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+        if (isIE)
+        {
+            window.navigator.msSaveOrOpenBlob(file, fileName);
+        }
+        else
+        {
+            let a = document.createElement('a');
+            a.href = URL.createObjectURL(file);
+            a.download = fileName;
+            a.click();
+        }
+     }
 </script>
