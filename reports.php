@@ -109,8 +109,11 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+	  <form method="post" action="deleteRecord.php">
+			<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+			<button type="submit" class="btn btn-danger">Delete</button>
+			<input type="hidden"name="recordId" value="<?php echo $record['id'] ?>">
+		</form>
       </div>
     </div>
   </div>
