@@ -85,8 +85,8 @@
 															</thead>
 															<tbody>
 																<tr>
-																	<td><?php echo date('H:i d-m-Y', strtotime($record['checkin'])) ?></td>
-																	<td><?php echo date('H:i d-m-Y', strtotime($record['checkout'])) ?></td>
+																	<td><?php echo date('d-m-Y H:i', strtotime($record['checkin'])) ?></td>
+																	<td><?php echo date('d-m-Y H:i', strtotime($record['checkout'])) ?></td>
 																	<td>
 																		<?php
 																			$seconds = strtotime($record['checkout']) - strtotime($record['checkin']);
