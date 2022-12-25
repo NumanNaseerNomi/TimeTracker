@@ -1,6 +1,6 @@
 <?php
 $recordId = $_POST["recordId"];
-include "connectDB.php";
+require_once("connectDB.php");
 
 $sql = "DELETE FROM records WHERE id = '$recordId'";
 $query = mysqli_query($conn, $sql);
