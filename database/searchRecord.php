@@ -14,14 +14,14 @@ switch($filterRecord)
     {
         $fromDate = date('Y-m-d', strtotime('monday this week', time()));
         $toDate = date("Y-m-d");
-        $sql = "SELECT * FROM Records WHERE checkin >= '$fromDate' && checkin <= '$toDate' && checkout IS NOT NULL ORDER BY ID DESC";
+        $sql = "SELECT * FROM Records WHERE checkin BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'lastWeek':
     {
         $fromDate = date('Y-m-d', strtotime('monday last week', time()));
         $toDate = date('Y-m-d', strtotime('sunday last week', time()));
-        $sql = "SELECT * FROM Records WHERE checkin >= '$fromDate' && checkin <= '$toDate' && checkout IS NOT NULL ORDER BY ID DESC";
+        $sql = "SELECT * FROM Records WHERE checkin BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'thisMonth':
