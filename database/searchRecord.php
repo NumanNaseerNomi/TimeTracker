@@ -1,5 +1,5 @@
 <?php
-include "connectDB.php";
+require_once("connectDB.php");
 $filterRecord = 'today';
 
 if(isset($_POST['filterRecord']))
@@ -77,3 +77,5 @@ while($row = mysqli_fetch_assoc($query))
 {
     $records[] = $row;
 }
+
+var_dump($filterRecord);
