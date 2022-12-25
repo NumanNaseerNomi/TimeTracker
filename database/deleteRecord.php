@@ -2,7 +2,7 @@
 $recordId = $_POST["recordId"];
 include "connectDB.php";
 
-$sql = "DELETE FROM Records WHERE id = '$recordId'";
+$sql = "DELETE FROM records WHERE id = '$recordId'";
 $query = mysqli_query($conn, $sql);
 
 if(mysqli_query($conn, $sql))
