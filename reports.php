@@ -21,6 +21,8 @@
 							<option value="today">Today</option>
 							<option value="thisWeek">This Week</option>
 							<option value="lastWeek">Last Week</option>
+							<option value="thisMonth">This Month</option>
+							<option value="lastMonth">Last Month</option>
 							<option value="thisYear">This Year</option>
 							<option value="lastYear">Last Year</option>
 							<option value="all">All</option>
