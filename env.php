@@ -2,8 +2,8 @@
 
 $env =
 [
-    'hostName' => "localhost",
-	'userName' => "root",
+    'hostName' => 'localhost',
+	'userName' => 'root',
 	'password' => '',
-	'dbName' => "TimeTracker",
+	'dbName' => 'TimeTracker',
 ];
