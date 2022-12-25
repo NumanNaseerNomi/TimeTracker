@@ -4,7 +4,7 @@ $checkin = $_POST["checkinTimestamp"];
 $checkout = $_POST["checkoutTimestamp"];
 $description = empty($_POST["description"]) ? '' : (', description = ' . "'" . $_POST["description"]) . "'";
 
-include "connectDB.php";
+require_once("connectDB.php");
 
 $sql = "UPDATE records SET checkin = '$checkin', checkout = '$checkout'" . $description . "WHERE id = '$id'";
 
