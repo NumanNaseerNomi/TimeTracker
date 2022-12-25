@@ -1,5 +1,11 @@
 <?php
-require_once("././env.php");
+$env =
+[
+    'hostName' => 'localhost',
+	'userName' => 'root',
+	'password' => '',
+	'dbName' => 'TimeTracker',
+];
 
 // Create connection
 $conn = mysqli_connect($env['hostName'], $env['userName'], $env['password'], $env['dbName']);
