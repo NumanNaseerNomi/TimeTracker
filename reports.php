@@ -49,7 +49,9 @@
 						<div class="card my-3">
 							<div class="card-header">
 								<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
-									<div class="btn-group mt-2" role="group" aria-label="First group"></div>
+									<div class="btn-group mt-2" role="group" aria-label="First group">
+										<h6><?php echo date('d-m-Y', strtotime($record['checkin'])) ?></h6>
+									</div>
 									<div class="input-group">
 										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 											<div class="btn-group dropstart">
@@ -57,7 +59,8 @@
 													<i class="fas fa-ellipsis-h"></i>
 												</button>
 												<ul class="dropdown-menu">
-													<li><a class="dropdown-item" href="#">Action</a></li>
+													<li><a class="dropdown-item" href="#">Edit</a></li>
+													<li><a class="dropdown-item" href="#">Delete</a></li>
 												</ul>
 											</div>
 										</div>
