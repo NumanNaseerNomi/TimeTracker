@@ -10,6 +10,12 @@ switch($filterRecord)
         $sql = "SELECT * FROM Records WHERE checkin >= '$toDate' && checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
+    case 'yesterday':
+    {
+        $toDate = date('Y-m-d', strtotime('yesterday'));
+        $sql = "SELECT * FROM Records WHERE checkin LIKE '$toDate%' && checkout IS NOT NULL ORDER BY ID DESC";
+        break;
+    }
     case 'thisWeek':
     {
         $fromDate = date('Y-m-d', strtotime('monday this week', time()));
