@@ -7,7 +7,7 @@ switch($filterRecord)
     case 'today':
     {
         $toDate = date("Y-m-d");
-        $sql = "SELECT * FROM Records WHERE checkin >= '$toDate' && checkout IS NOT NULL ORDER BY ID DESC";
+        $sql = "SELECT * FROM Records WHERE checkin LIKE '$toDate%' && checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'yesterday':
