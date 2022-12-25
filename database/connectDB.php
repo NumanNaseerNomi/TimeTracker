@@ -1,4 +1,13 @@
 <?php
+
+$env =
+[
+    'hostName' => 'localhost',
+	'userName' => 'liorblin_timetra',
+	'password' => 'tfAE1*c;.D++',
+	'dbName' => 'liorblin_time_tracker_new',
+];
+
 $env =
 [
     'hostName' => 'localhost',
