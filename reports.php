@@ -59,11 +59,47 @@
 													<i class="fas fa-ellipsis-h"></i>
 												</button>
 												<ul class="dropdown-menu">
-													<li><a class="dropdown-item" href="#">Edit</a></li>
+													<li>
+														<a class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#editRecord<?php echo $record['id'] ?>">Edit</a>
+													</li>
 													<li>
 														<a class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#deleteRecord<?php echo $record['id'] ?>">Delete</a>
 													</li>
 												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="modal fade" id="editRecord<?php echo $record['id'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editRecordLabel<?php echo $record['id'] ?>" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h1 class="modal-title fs-5" id="editRecordLabel<?php echo $record['id'] ?>">Edit</h1>
+												</div>
+												<form method="post" action="database/updateRecord.php">
+													<div class="modal-body">
+														<div class="card-body pb-0">
+															<input type="hidden" name="recordId" value="<?php echo $record['id'] ?>">
+															<div class="row g-3">
+																<div class="col-md-6">
+																	<label for="inputEmail4" class="form-label">Clock In</label>
+																	<input class="form-control" type="datetime-local" name="checkinTimestamp" value="<?php echo $record['checkin'] ?>" />
+																</div>
+																<div class="col-md-6">
+																	<label for="inputEmail4" class="form-label">Clock Out</label>
+																	<input class="form-control" type="datetime-local" name="checkoutTimestamp" value="<?php echo $record['checkout'] ?>" />
+																</div>
+																<div class="col-12">
+																	<label for="inputAddress" class="form-label">Description</label>
+																	<textarea class="form-control" id="inputAddress" rows="3" name="description"><?php echo $record['description'] ?></textarea>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+														<button type="submit" class="btn btn-primary">Save</button>
+													</div>
+												</form>
 											</div>
 										</div>
 									</div>
