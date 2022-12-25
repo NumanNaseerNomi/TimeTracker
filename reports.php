@@ -87,6 +87,7 @@
 										</tr>
 									</tbody>
 								</table>
+								<p><?php echo $record['description'] ?></p>
 							</div>
 						</div>
 					<?php } ?>
