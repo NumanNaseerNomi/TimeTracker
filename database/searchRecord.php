@@ -1,20 +1,23 @@
 <?php
 $filterRecord = $_POST['filterRecord'] ?? 'today';
+$timestamp = $_POST['timestamp'] ?? date("Y-m-d");
+
+// die($timestamp);
 include "connectDB.php";
 
 switch($filterRecord)
 {
     case 'today':
     {
-        $today = date("Y-m-d");
-        $sql = "SELECT * FROM Records WHERE checkin >= '$today' && checkout IS NOT NULL ORDER BY ID DESC";
+        $toDate = date("Y-m-d");
+        $sql = "SELECT * FROM Records WHERE checkin >= '$toDate' && checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'thisWeek':
     {
         $fromDate = date('Y-m-d', strtotime('monday this week', time()));
-        $today = date("Y-m-d");
-        $sql = "SELECT * FROM Records WHERE checkin >= '$fromDate' && checkin <= '$today' && checkout IS NOT NULL ORDER BY ID DESC";
+        $toDate = date("Y-m-d");
+        $sql = "SELECT * FROM Records WHERE checkin >= '$fromDate' && checkin <= '$toDate' && checkout IS NOT NULL ORDER BY ID DESC";
         break;
     }
     case 'lastWeek':
@@ -22,6 +25,18 @@ switch($filterRecord)
         $fromDate = date('Y-m-d', strtotime('monday last week', time()));
         $toDate = date('Y-m-d', strtotime('sunday last week', time()));
         $sql = "SELECT * FROM Records WHERE checkin >= '$fromDate' && checkin <= '$toDate' && checkout IS NOT NULL ORDER BY ID DESC";
+        break;
+    }
+    case 'thisMonth':
+    {
+        $fromDate = date('Y-m-d', strtotime('first day of this month'));
+        $toDate = date('Y-m-d', strtotime('last day of this month'));
+        $sql = "SELECT * FROM Records WHERE checkin BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY ID DESC";
+        break;
+    }
+    case 'lastMonth':
+    {
+        var_dump($filterRecord);
         break;
     }
     case 'thisYear':
@@ -41,7 +56,7 @@ switch($filterRecord)
     }
 }
 
-$query = mysqli_query($conn,$sql);
+$query = mysqli_query($conn, $sql);
 $records = [];
 
 while($row = mysqli_fetch_assoc($query))
