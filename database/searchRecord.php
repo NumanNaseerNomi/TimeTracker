@@ -1,6 +1,11 @@
 <?php
 include "connectDB.php";
-$filterRecord = isset($_POST['filterRecord']) ? $_POST['filterRecord'] : 'today';
+$filterRecord = 'today';
+
+if(isset($_POST['filterRecord']))
+{
+    $filterRecord = $_POST['filterRecord'];
+}
 
 switch($filterRecord)
 {
