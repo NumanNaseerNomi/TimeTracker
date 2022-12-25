@@ -3,7 +3,7 @@ $date = $_POST["date"];
 $time = $_POST["time"];
 
 $timestamp = date("Y-m-d H:i:s", strtotime($date . ' ' . $time));
-$description = $_POST["description"] ?? NULL;
+$description = empty($_POST["description"]) ? '' : (', description = ' . "'" . $_POST["description"]) . "'";
 
 include "connectDB.php";
 
@@ -14,7 +14,7 @@ $record = mysqli_fetch_assoc($query);
 if(!empty($record) && is_null($record['checkout']))
 {
     $id = $record['id'];
-    $sql = "UPDATE Records SET checkout = '$timestamp', description = '$description' WHERE id = '$id'";
+    $sql = "UPDATE Records SET checkout = '$timestamp'" . $description . "WHERE id = '$id'";
 }
 else
 {
