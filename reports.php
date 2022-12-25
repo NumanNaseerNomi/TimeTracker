@@ -247,3 +247,4 @@
 	
 	document.body.addEventListener('touchstart', () => { document.body.classList.add('touched'); });
 </script>
+<?php mysqli_free_result($query); ?>
