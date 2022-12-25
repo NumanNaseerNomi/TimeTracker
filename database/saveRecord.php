@@ -7,18 +7,18 @@ $description = empty($_POST["description"]) ? '' : (', description = ' . "'" . $
 
 include "connectDB.php";
 
-$sql = "SELECT * FROM Records ORDER BY ID DESC LIMIT 1";
+$sql = "SELECT * FROM records ORDER BY id DESC LIMIT 1";
 $query = mysqli_query($conn, $sql);
 $record = mysqli_fetch_assoc($query);
 
 if(!empty($record) && is_null($record['checkout']))
 {
     $id = $record['id'];
-    $sql = "UPDATE Records SET checkout = '$timestamp'" . $description . "WHERE id = '$id'";
+    $sql = "UPDATE records SET checkout = '$timestamp'" . $description . "WHERE id = '$id'";
 }
 else
 {
-	$sql = "INSERT INTO Records (checkin) VALUES ('$timestamp')";
+	$sql = "INSERT INTO records (checkin) VALUES ('$timestamp')";
 }
 
 if(mysqli_query($conn, $sql))
