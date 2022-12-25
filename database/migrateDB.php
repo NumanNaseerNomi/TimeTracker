@@ -1,5 +1,5 @@
 <?php
-include "connectDB.php";
+require_once("connectDB.php");
 $sql = file_get_contents('TimeTracker.sql');
 
 if(mysqli_multi_query($conn, $sql))
