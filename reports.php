@@ -1,5 +1,5 @@
 <?php 
-	include "./database/searchRecord.php";
+	require_once("./database/searchRecord.php");
 	$totalSeconds = 0;
 ?>
 <!DOCTYPE html>
