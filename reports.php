@@ -19,6 +19,7 @@
 					<form method="post" action="reports.php">
 						<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="filterRecord" onchange="this.form.submit()">
 							<option value="today">Today</option>
+							<option value="yesterday">Yesterday</option>
 							<option value="thisWeek">This Week</option>
 							<option value="lastWeek">Last Week</option>
 							<option value="thisMonth">This Month</option>
