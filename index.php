@@ -25,6 +25,7 @@
 								<button type="button" class="btn border-0" onClick="alert(1)">
 									<h1 id="showTime"></h1>
 								</button>
+								<i class="far fa-clock fs-2"></i>
 							</div>
 							<input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" />
 							<input type="date" id="datePicker" name="date" hidden/>
