@@ -2,7 +2,7 @@
 	<div class="container text-center">
 		<span></span>
 		<span>
-			<a class="btn btn-link text-dark" href="index.php" role="button">
+			<a class="btn btn-link text-dark" href="/" role="button">
 				<i class="fas fa-clock fs-3"></i>
 			</a>
 			<a class="btn btn-link text-dark" href="reports.php" role="button">
