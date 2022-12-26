@@ -21,12 +21,28 @@
 					<h1 class="p-5">Time Tracker</h1>
 					<form method="post" action="database/saveRecord.php">
 						<div class="pt-5">
-							<div class="pe-auto">
-								<button type="button" class="btn border-0" onClick="alert(1)">
-									<h1 id="showTime"></h1>
-								</button>
-								<i class="far fa-clock fs-2"></i>
+							<button type="button" class="btn border-0" data-bs-toggle="modal" data-bs-target="#timePickerModal">
+								<h1 class="showTime" id="showTime"></h1>
+							</button>
+							<i class="far fa-clock fs-2"></i>
+							<div class="modal fade" id="timePickerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="timePickerModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h1 class="modal-title fs-5" id="timePickerModalLabel">Pick Time</h1>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<input class="showTime border-0" type="time" name="times" required />
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" onClick="alert(1)" data-bs-dismiss="modal">Select</button>
+										</div>
+									</div>
+								</div>
 							</div>
+
+<br/>
 							<input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" />
 							<input type="date" id="datePicker" name="date" hidden/>
 						</div>
@@ -69,7 +85,7 @@
 		height: 100%;
 	}
 
-	#showTime
+	.showTime
 	{
 		font-size: 6rem;
 	}
