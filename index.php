@@ -36,7 +36,7 @@
 											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
 										<div class="modal-body">
-											<input class="showTime border-0" type="time" id="timePicker" name="times" />
+											<input class="showTime border-0" type="time" id="timePicker" />
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-primary" onClick="window.location.reload()" data-bs-dismiss="modal">Reset</button>
