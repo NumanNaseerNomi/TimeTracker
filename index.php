@@ -48,10 +48,10 @@
 
 <br/>
 							<!-- <input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" /> -->
-							<input type="date" id="datePicker" name="date" hidden/>
+							<!-- <input type="date" id="datePicker" name="date" hidden/> -->
 						</div>
 						<?php if(!empty($record) && is_null($record['checkout'])) { ?>
-							<button type="button" class="btn btn-primary btn-lg m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+							<button type="button" class="btn btn-primary btn-lg m-4" data-bs-toggle="modal" data-bs-target="#checkOutModel">
 								<i class="far fa-clock"></i> Clock Out
 							</button>
 						<?php } else { ?>
@@ -59,11 +59,11 @@
 								<i class="far fa-clock"></i> Clock In
 							</button>
 						<?php }?>
-						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						<div class="modal fade" id="checkOutModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="checkOutModelLabel" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h1 class="modal-title fs-5" id="staticBackdropLabel">Description</h1>
+										<h1 class="modal-title fs-5" id="checkOutModelLabel">Description</h1>
 									</div>
 									<div class="modal-body">
 										<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
