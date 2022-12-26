@@ -27,7 +27,7 @@
 								</h1>
 							</button>
 							<i class="far fa-clock fs-2"></i>
-							<input type="text" id="timestamp" name="timestamp" readonly>
+							<input type="text" id="timestamp" name="timestamp" readonly hidden />
 							<div class="modal fade" id="timePickerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="timePickerModalLabel" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
@@ -39,6 +39,7 @@
 											<input class="showTime border-0" type="time" id="timePicker" name="times" />
 										</div>
 										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" onClick="window.location.reload()" data-bs-dismiss="modal">Reset</button>
 											<button type="button" class="btn btn-primary" onClick="timePicked()" data-bs-dismiss="modal">Select</button>
 										</div>
 									</div>
