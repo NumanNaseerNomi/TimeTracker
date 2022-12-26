@@ -91,8 +91,8 @@
 	}
 </style>
 <script>
-	const timestamp = new Date();
-	const month = timestamp.getMonth() + 1;
+	// const timestamp = new Date();
+	// const month = timestamp.getMonth() + 1;
 	// const time = timestamp.toTimeString().split(' ')[0].split(':');
 	
 	// document.querySelector('#timePicker').value = time[0] + ':' + time[1];
