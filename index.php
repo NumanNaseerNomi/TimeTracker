@@ -21,7 +21,11 @@
 					<h1 class="p-5">Time Tracker</h1>
 					<form method="post" action="database/saveRecord.php">
 						<div class="pt-5">
-							<h1 id="showTime"></h1>
+							<div class="pe-auto">
+								<button type="button" class="btn border-0" onClick="alert(1)">
+									<h1 id="showTime"></h1>
+								</button>
+							</div>
 							<input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" />
 							<input type="date" id="datePicker" name="date" hidden/>
 						</div>
