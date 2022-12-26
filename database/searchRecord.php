@@ -15,8 +15,12 @@ elseif(isset($_GET['filterBy']))
     }
     else
     {
-        die("Incorrect Filter.");
+        $filterBy = 'today';
     }
+}
+else
+{
+    $filterBy = 'today';
 }
 
 switch($filterBy)
