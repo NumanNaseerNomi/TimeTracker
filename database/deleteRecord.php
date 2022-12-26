@@ -1,9 +1,9 @@
 <?php
-$recordId = $_POST["recordId"];
 require_once("connectDB.php");
+$recordId = $_POST["recordId"];
 
 $sql = "DELETE FROM records WHERE id = '$recordId'";
-$query = mysqli_query($conn, $sql);
+// $query = mysqli_query($conn, $sql);
 
 if(mysqli_query($conn, $sql))
 {
