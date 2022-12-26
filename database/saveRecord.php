@@ -21,7 +21,7 @@ else
 if(mysqli_query($conn, $sql))
 {
     mysqli_close($conn);
-    header('location:../index.php');
+    header('location:../');
 }
 else
 {
