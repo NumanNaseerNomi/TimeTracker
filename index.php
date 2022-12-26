@@ -91,22 +91,6 @@
 	}
 </style>
 <script>
-	// const timestamp = new Date();
-	// const month = timestamp.getMonth() + 1;
-	// const time = timestamp.toTimeString().split(' ')[0].split(':');
-	
-	// document.querySelector('#timePicker').value = time[0] + ':' + time[1];
-	// document.querySelector('#datePicker').value = timestamp.getFullYear() + "-" + month + "-" + timestamp.getDate();
-
-// 	const time = new Date().toTimeString().slice(0, 5);
-// const date = new Date().toDateString();
-// const dateTime = date + " " + time;
-// const d = new Date(date + " " + time);
-
-// alert(d);
-
-	// document.querySelector('#timestamp').value = dateTime; //'2022-12-26 19:28:38';
-// alert(timestamp);
 	function timePicked()
 	{
 		let timePicked = document.querySelector('#timePicker').value;
@@ -114,8 +98,8 @@
 		if(timePicked)
 		{
 			let date = new Date().toDateString();
-			document.querySelector('#showPickedTime').innerHTML = timePicked;
 			document.querySelector('#timestamp').value = new Date(date + " " + timePicked);
+			document.querySelector('#showPickedTime').innerHTML = timePicked;
 		}
 	}
 
