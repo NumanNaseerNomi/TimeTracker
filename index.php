@@ -22,7 +22,9 @@
 					<form method="post" action="database/saveRecord.php">
 						<div class="pt-5">
 							<button type="button" class="btn border-0" data-bs-toggle="modal" data-bs-target="#timePickerModal">
-								<h1 class="showTime" id="showTime">--:--</h1>
+								<h1 class="showTime" id="showPickedTime">
+									<span id="showTime">--:--</span>
+								</h1>
 							</button>
 							<i class="far fa-clock fs-2"></i>
 							<div class="modal fade" id="timePickerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="timePickerModalLabel" aria-hidden="true">
@@ -114,7 +116,7 @@
 
 		if(timePicked)
 		{
-			alert(timePicked);
+			document.querySelector('#showPickedTime').innerHTML = timePicked;
 		}
 	}
 
