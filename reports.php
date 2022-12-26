@@ -17,7 +17,7 @@
 				<div class="col-md-4 offset-md-4">
 					<h1 class="p-5">Reports</h1>
 					<form method="post" action="reports.php">
-						<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="filterRecord" onchange="this.form.submit()">
+						<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="filterBy" onchange="this.form.submit()">
 							<option value="today">Today</option>
 							<option value="yesterday">Yesterday</option>
 							<option value="thisWeek">This Week</option>
@@ -79,7 +79,7 @@
 													<div class="modal-body">
 														<div class="card-body pb-0">
 															<input type="hidden" name="recordId" value="<?php echo $record['id'] ?>">
-															<input type="hidden" name="filterBy" value="<?php echo $filterRecord ?>">
+															<input type="hidden" name="filterBy" value="<?php echo $filterBy ?>">
 															<div class="row g-3">
 																<div class="col-md-6">
 																	<label for="inputEmail4" class="form-label">Clock In</label>
@@ -144,7 +144,7 @@
 														<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
 														<button type="submit" class="btn btn-danger">Delete</button>
 														<input type="hidden" name="recordId" value="<?php echo $record['id'] ?>">
-														<input type="hidden" name="filterBy" value="<?php echo $filterRecord ?>">
+														<input type="hidden" name="filterBy" value="<?php echo $filterBy ?>">
 													</form>
 												</div>
 											</div>
@@ -221,8 +221,8 @@
 	}
 </style>
 <script>
-	let filterOption = <?php echo  "'" . $filterRecord . "'" ?>;
-	document.querySelector('[name="filterRecord"]').value = filterOption;
+	let filterOption = <?php echo  "'" . $filterBy . "'" ?>;
+	document.querySelector('[name="filterBy"]').value = filterOption;
 	document.querySelector('.timeSize').innerHTML = <?php echo floor($totalSeconds / 3600) ?>;
 
 	function downloadData()
