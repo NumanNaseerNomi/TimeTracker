@@ -89,16 +89,6 @@
 	{
 		font-size: 6rem;
 	}
-
-	/* .timeSize
-	{
-		font-size: 5rem;
-	} */
-
-	/* input[type="time"]::-webkit-calendar-picker-indicator
-	{
-		font-size: 3rem;
-	} */
 </style>
 <script>
 	const timestamp = new Date();
