@@ -22,7 +22,7 @@
 					<form method="post" action="database/saveRecord.php">
 						<div class="pt-5">
 							<button type="button" class="btn border-0" data-bs-toggle="modal" data-bs-target="#timePickerModal">
-								<h1 class="showTime" id="showTime"></h1>
+								<h1 class="showTime" id="showTime">--:--</h1>
 							</button>
 							<i class="far fa-clock fs-2"></i>
 							<div class="modal fade" id="timePickerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="timePickerModalLabel" aria-hidden="true">
@@ -33,17 +33,17 @@
 											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
 										<div class="modal-body">
-											<input class="showTime border-0" type="time" name="times" required />
+											<input class="showTime border-0" type="time" id="timePicker" name="times" />
 										</div>
 										<div class="modal-footer">
-											<button type="button" class="btn btn-primary" onClick="alert(1)" data-bs-dismiss="modal">Select</button>
+											<button type="button" class="btn btn-primary" onClick="timePicked()" data-bs-dismiss="modal">Select</button>
 										</div>
 									</div>
 								</div>
 							</div>
 
 <br/>
-							<input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" />
+							<!-- <input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" /> -->
 							<input type="date" id="datePicker" name="date" hidden/>
 						</div>
 						<?php if(!empty($record) && is_null($record['checkout'])) { ?>
@@ -105,15 +105,25 @@
 	const month = timestamp.getMonth() + 1;
 	const time = timestamp.toTimeString().split(' ')[0].split(':');
 	
-	document.querySelector('#timePicker').value = time[0] + ':' + time[1];
-	document.querySelector('#datePicker').value = timestamp.getFullYear() + "-" + month + "-" + timestamp.getDate();
+	// document.querySelector('#timePicker').value = time[0] + ':' + time[1];
+	// document.querySelector('#datePicker').value = timestamp.getFullYear() + "-" + month + "-" + timestamp.getDate();
 
-	function syncTime()
+	function timePicked()
 	{
-		document.querySelector('#showTime').innerHTML = new Date().toTimeString().slice(0, 5);
+		let timePicked = document.querySelector('#timePicker').value;
+
+		if(timePicked)
+		{
+			alert(timePicked);
+		}
 	}
-	
-	syncTime();
-	setInterval(() => syncTime(), 1000);
+
+	if(document.querySelector('#showTime'))
+	{
+		setInterval(() =>
+		{
+			document.querySelector('#showTime').innerHTML = new Date().toTimeString().slice(0, 5);
+		}, 1000);
+	}
 </script>
 <?php is_null($query) ?? mysqli_free_result($query); ?>
