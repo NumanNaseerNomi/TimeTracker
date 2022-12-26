@@ -1,13 +1,25 @@
 <?php
 require_once("connectDB.php");
-$filterRecord = 'today';
 
-if(isset($_POST['filterRecord']))
+if(isset($_POST['filterBy']))
 {
-    $filterRecord = $_POST['filterRecord'];
+    $filterBy = $_POST['filterBy'];
+}
+elseif(isset($_GET['filterBy']))
+{
+    $filers = ['today', 'yesterday', 'thisWeek', 'lastWeek', 'lastWeek', 'thisMonth', 'lastMonth', 'thisYear', 'lastYear', 'all'];
+
+    if(in_array($_GET['filterBy'], $filers))
+    {
+        $filterBy = $_GET['filterBy'];
+    }
+    else
+    {
+        die("Incorrect Filter.");
+    }
 }
 
-switch($filterRecord)
+switch($filterBy)
 {
     case 'today':
     {
