@@ -27,6 +27,7 @@
 								</h1>
 							</button>
 							<i class="far fa-clock fs-2"></i>
+							<input type="text" id="timestamp" name="timestamp" readonly>
 							<div class="modal fade" id="timePickerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="timePickerModalLabel" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
@@ -105,18 +106,29 @@
 <script>
 	const timestamp = new Date();
 	const month = timestamp.getMonth() + 1;
-	const time = timestamp.toTimeString().split(' ')[0].split(':');
+	// const time = timestamp.toTimeString().split(' ')[0].split(':');
 	
 	// document.querySelector('#timePicker').value = time[0] + ':' + time[1];
 	// document.querySelector('#datePicker').value = timestamp.getFullYear() + "-" + month + "-" + timestamp.getDate();
 
+// 	const time = new Date().toTimeString().slice(0, 5);
+// const date = new Date().toDateString();
+// const dateTime = date + " " + time;
+// const d = new Date(date + " " + time);
+
+// alert(d);
+
+	// document.querySelector('#timestamp').value = dateTime; //'2022-12-26 19:28:38';
+// alert(timestamp);
 	function timePicked()
 	{
 		let timePicked = document.querySelector('#timePicker').value;
 
 		if(timePicked)
 		{
+			let date = new Date().toDateString();
 			document.querySelector('#showPickedTime').innerHTML = timePicked;
+			document.querySelector('#timestamp').value = new Date(date + " " + timePicked);
 		}
 	}
 
@@ -124,7 +136,10 @@
 	{
 		setInterval(() =>
 		{
+			let date = new Date().toDateString();
+			let time = new Date().toTimeString().slice(0, 5);
 			document.querySelector('#showTime').innerHTML = new Date().toTimeString().slice(0, 5);
+			document.querySelector('#timestamp').value = new Date(date + " " + time);
 		}, 1000);
 	}
 </script>
