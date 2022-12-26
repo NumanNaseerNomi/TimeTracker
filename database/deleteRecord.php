@@ -7,7 +7,7 @@ $sql = "DELETE FROM records WHERE id = '$recordId'";
 if(mysqli_query($conn, $sql))
 {
     mysqli_close($conn);
-    header('location:../reports.php');
+    header('location:../reports.php?filterBy=' . $_POST["filterBy"]);
 }
 else
 {
