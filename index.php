@@ -45,10 +45,6 @@
 									</div>
 								</div>
 							</div>
-
-<br/>
-							<!-- <input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" /> -->
-							<!-- <input type="date" id="datePicker" name="date" hidden/> -->
 						</div>
 						<?php if(!empty($record) && is_null($record['checkout'])) { ?>
 							<button type="button" class="btn btn-primary btn-lg m-4" data-bs-toggle="modal" data-bs-target="#checkOutModel">
