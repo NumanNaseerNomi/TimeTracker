@@ -98,7 +98,7 @@
 		if(timePicked)
 		{
 			let date = new Date().toDateString();
-			document.querySelector('#timestamp').value = new Date(date + " " + timePicked);
+			document.querySelector('#timestamp').value = date + " " + timePicked;
 			document.querySelector('#showPickedTime').innerHTML = timePicked;
 		}
 	}
