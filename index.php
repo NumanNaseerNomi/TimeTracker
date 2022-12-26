@@ -109,7 +109,7 @@
 		{
 			let date = new Date().toDateString();
 			let time = new Date().toTimeString().slice(0, 5);
-			document.querySelector('#showTime').innerHTML = new Date().toTimeString().slice(0, 5);
+			document.querySelector('#showTime').innerHTML = time;
 			document.querySelector('#timestamp').value = new Date(date + " " + time);
 		}, 1000);
 	}
