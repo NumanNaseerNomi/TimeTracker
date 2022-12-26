@@ -80,7 +80,7 @@
 </html>
 <script type="text/javascript" src="./plugins/bootstrap/bootstrap.bundle.min.js"></script>
 <style>
-	html,body
+	html, body
 	{
 		height: 100%;
 	}
