@@ -46,15 +46,15 @@
 								</div>
 							</div>
 						</div>
-						<?php if(!empty($record) && is_null($record['checkout'])) { ?>
-							<button type="button" class="btn btn-primary btn-lg m-4" data-bs-toggle="modal" data-bs-target="#checkOutModel">
-								<i class="far fa-clock"></i> Clock Out
-							</button>
-						<?php } else { ?>
+						<?php if(is_null($record) || !is_null($record['checkout'])) { ?>
 							<button type="submit" class="btn btn-primary btn-lg m-4">
 								<i class="far fa-clock"></i> Clock In
 							</button>
-						<?php }?>
+						<?php } else { ?>
+							<button type="button" class="btn btn-primary btn-lg m-4" data-bs-toggle="modal" data-bs-target="#checkOutModel">
+								<i class="far fa-clock"></i> Clock Out
+							</button>
+						<?php } ?>
 						<div class="modal fade" id="checkOutModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="checkOutModelLabel" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
