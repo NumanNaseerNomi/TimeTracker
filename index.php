@@ -21,6 +21,7 @@
 					<h1 class="p-5">Time Tracker</h1>
 					<form method="post" action="database/saveRecord.php">
 						<div class="pt-5">
+							<h1 id="showTime"></h1>
 							<input class="timeSize border-0 pt-5" id="timePicker" type="time" name="time" />
 							<input type="date" id="datePicker" name="date" hidden/>
 						</div>
@@ -63,15 +64,20 @@
 		height: 100%;
 	}
 
-	.timeSize
+	#showTime
 	{
-		font-size: 5rem;
+		font-size: 8rem;
 	}
 
-	input[type="time"]::-webkit-calendar-picker-indicator
+	/* .timeSize
+	{
+		font-size: 5rem;
+	} */
+
+	/* input[type="time"]::-webkit-calendar-picker-indicator
 	{
 		font-size: 3rem;
-	}
+	} */
 </style>
 <script>
 	const timestamp = new Date();
@@ -80,5 +86,13 @@
 	
 	document.querySelector('#timePicker').value = time[0] + ':' + time[1];
 	document.querySelector('#datePicker').value = timestamp.getFullYear() + "-" + month + "-" + timestamp.getDate();
+
+	function syncTime()
+	{
+		document.querySelector('#showTime').innerHTML = new Date().toTimeString().slice(0, 5);
+	}
+	
+	syncTime();
+	setInterval(() => syncTime(), 1000);
 </script>
 <?php is_null($query) ?? mysqli_free_result($query); ?>
