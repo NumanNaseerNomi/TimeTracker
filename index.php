@@ -66,7 +66,7 @@
 
 	#showTime
 	{
-		font-size: 8rem;
+		font-size: 6rem;
 	}
 
 	/* .timeSize
