@@ -1,5 +1,5 @@
 <?php
-// localhost configs
+// production configs
 // $env =
 // [
 //     'hostName' => 'localhost',
@@ -9,22 +9,22 @@
 // ];
 
 // staging configs
-$env =
-[
-    'hostName' => 'localhost',
-	'userName' => 'id20071387_numannaseernomi',
-	'password' => 'E}d%mQ{3byy-AFcc',
-	'dbName' => 'id20071387_itimetraker',
-];
-
-// production configs
 // $env =
 // [
 //     'hostName' => 'localhost',
-// 	'userName' => 'root',
-// 	'password' => '',
-// 	'dbName' => 'TimeTracker',
+// 	'userName' => 'id20071387_numannaseernomi',
+// 	'password' => 'E}d%mQ{3byy-AFcc',
+// 	'dbName' => 'id20071387_itimetraker',
 // ];
+
+// local configs
+$env =
+[
+    'hostName' => 'localhost',
+	'userName' => 'root',
+	'password' => '',
+	'dbName' => 'TimeTracker',
+];
 
 // Create connection
 $conn = mysqli_connect($env['hostName'], $env['userName'], $env['password'], $env['dbName']);
