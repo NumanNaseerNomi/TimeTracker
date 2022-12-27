@@ -8,6 +8,7 @@
 -- PHP Version: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,9 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `records` (
   `id` int NOT NULL,
-  `checkin` timestamp NOT NULL,
+  `checkin` timestamp NULL DEFAULT NULL,
   `checkout` timestamp NULL DEFAULT NULL,
-  `description` text COLLATE utf8mb4_bin
+  `description` text COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
