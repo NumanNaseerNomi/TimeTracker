@@ -86,7 +86,7 @@ switch($filterBy)
     {
         $fromDate = date('Y-m-d', strtotime('first day of january last year'));
         $toDate = date('Y-m-d', strtotime('last day of december last year'));
-        $sql = "SELECT * FROM records WHERE checkin BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY id DESC";
+        $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
     case 'all':
