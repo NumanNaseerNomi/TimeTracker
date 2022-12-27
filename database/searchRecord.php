@@ -1,6 +1,5 @@
 <?php
 require_once("connectDB.php");
-$todayDate = isset($_POST['todayDate']) ? $_POST['todayDate'] : date("Y-m-d");
 
 if(isset($_POST['filterBy']))
 {
@@ -22,6 +21,19 @@ elseif(isset($_GET['filterBy']))
 else
 {
     $filterBy = 'today';
+}
+
+if(isset($_POST['filterDate']))
+{
+    $todayDate = date('Y-m-d', strtotime($_POST['filterDate']));
+}
+elseif(isset($_GET['filterDate']))
+{
+    $todayDate = date('Y-m-d', strtotime($_GET['filterDate']));
+}
+else
+{
+    $toDate = date("Y-m-d");
 }
 
 switch($filterBy)
