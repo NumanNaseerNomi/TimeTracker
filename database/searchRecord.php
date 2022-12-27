@@ -45,8 +45,8 @@ switch($filterBy)
     }
     case 'yesterday':
     {
-        $toDate = date('Y-m-d', strtotime('yesterday'));
-        $sql = "SELECT * FROM records WHERE checkin LIKE '$toDate%' && checkout IS NOT NULL ORDER BY id DESC";
+        $yesterday = date('Y-m-d', strtotime($todayDate . "-1 day"));
+        $sql = "SELECT * FROM records WHERE Date(checkin) = '$yesterday' && checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
     case 'thisWeek':
