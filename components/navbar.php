@@ -5,7 +5,7 @@
 			<a class="btn btn-link text-dark" href="index.php" role="button">
 				<i class="fas fa-clock fs-1"></i>
 			</a>
-			<a class="btn btn-link text-dark" href="reports.php?filterBy=today&filterDate=" role="button" id="filterDate">
+			<a class="btn btn-link text-dark" href="reports.php?filterBy=today&filterDate=" role="button" id="filterDateUrl">
 				<i class="fas fa-chart-pie fs-1"></i>
 			</a>
 		</span>
@@ -14,5 +14,5 @@
 </nav>
 <script>
 	let date = new Date().toDateString();
-	document.querySelector('#filterDate').href += date;
+	document.querySelector('#filterDateUrl').href += date;
 </script>
