@@ -85,11 +85,11 @@
 															<div class="row g-3">
 																<div class="col-md-6">
 																	<label for="inputEmail4" class="form-label">Clock In</label>
-																	<input class="form-control" type="datetime-local" name="checkinTimestamp" value="<?php echo $record['checkin'] ?>" />
+																	<input class="form-control" type="datetime-local" name="checkinTimestamp" value="<?php echo date("Y-m-d H:i", strtotime($record['checkin'])) ?>" />
 																</div>
 																<div class="col-md-6">
 																	<label for="inputEmail4" class="form-label">Clock Out</label>
-																	<input class="form-control" type="datetime-local" name="checkoutTimestamp" value="<?php echo $record['checkout'] ?>" />
+																	<input class="form-control" type="datetime-local" name="checkoutTimestamp" value="<?php echo date("Y-m-d H:i", strtotime($record['checkout'])) ?>" />
 																</div>
 																<div class="col-12">
 																	<label for="inputAddress" class="form-label">Description</label>
