@@ -81,6 +81,7 @@
 														<div class="card-body pb-0">
 															<input type="hidden" name="recordId" value="<?php echo $record['id'] ?>">
 															<input type="hidden" name="filterBy" value="<?php echo $filterBy ?>">
+															<input type="hidden" name="filterDate" />
 															<div class="row g-3">
 																<div class="col-md-6">
 																	<label for="inputEmail4" class="form-label">Clock In</label>
