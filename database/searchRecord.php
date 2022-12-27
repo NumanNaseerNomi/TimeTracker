@@ -33,15 +33,14 @@ elseif(isset($_GET['filterDate']))
 }
 else
 {
-    $toDate = date("Y-m-d");
+    $todayDate = date("Y-m-d");
 }
 
 switch($filterBy)
 {
     case 'today':
     {
-        $toDate = date("Y-m-d");
-        $sql = "SELECT * FROM records WHERE checkin LIKE '$toDate%' && checkout IS NOT NULL ORDER BY id DESC";
+        $sql = "SELECT * FROM records WHERE Date(checkin) = '$todayDate' && checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
     case 'yesterday':
