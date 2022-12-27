@@ -11,7 +11,7 @@ $sql = "UPDATE records SET checkin = '$checkin', checkout = '$checkout'" . $desc
 if(mysqli_query($conn, $sql))
 {
     mysqli_close($conn);
-    header('location:../reports.php?filterBy=' . $_POST["filterBy"]);
+    header('location:../reports.php?filterBy=' . $_POST["filterBy"] . '&filterDate=' . $_POST['filterDate']);
 }
 else
 {
