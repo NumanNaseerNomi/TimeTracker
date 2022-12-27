@@ -1,5 +1,6 @@
 <?php
 require_once("connectDB.php");
+$todayDate = isset($_POST['todayDate']) ? $_POST['todayDate'] : date("Y-m-d");
 
 if(isset($_POST['filterBy']))
 {
