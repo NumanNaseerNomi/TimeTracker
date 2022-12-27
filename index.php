@@ -43,7 +43,7 @@
 											</div>
 										</div>
 										<div class="modal-footer">
-											<button type="button" class="btn btn-primary" onClick="window.location.reload()" data-bs-dismiss="modal">Reset</button>
+											<button type="button" class="btn btn-danger" onClick="window.location.reload()" data-bs-dismiss="modal">Reset</button>
 											<button type="button" class="btn btn-primary" onClick="timePicked()" data-bs-dismiss="modal">Select</button>
 										</div>
 									</div>
