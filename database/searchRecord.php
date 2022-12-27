@@ -64,9 +64,8 @@ switch($filterBy)
     }
     case 'thisMonth':
     {
-        $fromDate = date('Y-m-d', strtotime('first day of this month'));
-        $toDate = date('Y-m-d', strtotime('last day of this month'));
-        $sql = "SELECT * FROM records WHERE checkin BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY id DESC";
+        $fromDate = date('Y-m-d', strtotime($todayDate . 'first day of this month'));
+        $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$fromDate' AND '$todayDate' AND checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
     case 'lastMonth':
