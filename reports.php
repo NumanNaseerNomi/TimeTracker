@@ -28,11 +28,11 @@
 							<option value="lastYear">Last Year</option>
 							<option value="all">All</option>
 						</select>
-						<input type="hidden" name="filterDate" id="filterDate" />
+						<input type="hidden" name="filterDate" />
 					</form>
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 						<div class="btn-group" role="group" aria-label="First group">
-							<span class="h4" id="displayTodayDate">March 14, 2022</span>
+							<span class="h4" id="displayTodayDate"></span>
 						</div>
 						<div class="input-group">
 							<button type="button" class="btn btn-link" onclick="downloadData()">
@@ -146,6 +146,7 @@
 														<button type="submit" class="btn btn-danger">Delete</button>
 														<input type="hidden" name="recordId" value="<?php echo $record['id'] ?>">
 														<input type="hidden" name="filterBy" value="<?php echo $filterBy ?>">
+														<input type="hidden" name="filterDate" />
 													</form>
 												</div>
 											</div>
@@ -249,7 +250,7 @@
     }
 	
 	document.body.addEventListener('touchstart', () => { document.body.classList.add('touched'); });
-	document.querySelector('#filterDate').value = new Date().toDateString();
+	document.querySelectorAll("input[name='filterDate']").forEach((item) => { item.value = new Date().toDateString(); });
 	document.querySelector('#displayTodayDate').innerHTML = new Date().toDateString();
 </script>
 <?php is_null($query) ?? mysqli_free_result($query); ?>
