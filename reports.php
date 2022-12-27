@@ -32,7 +32,7 @@
 					</form>
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 						<div class="btn-group" role="group" aria-label="First group">
-							<span class="h4">March 14, 2022</span>
+							<span class="h4" id="displayTodayDate">March 14, 2022</span>
 						</div>
 						<div class="input-group">
 							<button type="button" class="btn btn-link" onclick="downloadData()">
@@ -250,5 +250,6 @@
 	
 	document.body.addEventListener('touchstart', () => { document.body.classList.add('touched'); });
 	document.querySelector('#todayDate').value = new Date().toDateString();
+	document.querySelector('#displayTodayDate').innerHTML = new Date().toDateString();
 </script>
 <?php is_null($query) ?? mysqli_free_result($query); ?>
