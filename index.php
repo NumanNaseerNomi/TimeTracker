@@ -1,7 +1,7 @@
 <?php
 	require_once("./database/connectDB.php");
 
-	$sql = "SELECT * FROM records ORDER BY id DESC LIMIT 1";
+	$sql = "SELECT * FROM records WHERE checkout IS NULL ORDER BY id DESC LIMIT 1";
 	$query = mysqli_query($conn, $sql);
 	$record = mysqli_fetch_assoc($query);
 ?>
@@ -50,7 +50,7 @@
 								</div>
 							</div>
 						</div>
-						<?php if(is_null($record) || !is_null($record['checkout'])) { ?>
+						<?php if(is_null($record)) { ?>
 							<button type="submit" class="btn btn-primary btn-lg m-4">
 								<i class="far fa-clock"></i> Clock In
 							</button>
