@@ -28,7 +28,7 @@
 							<option value="lastYear">Last Year</option>
 							<option value="all">All</option>
 						</select>
-						<input type="hidden" name="todayDate" id="todayDate" />
+						<input type="hidden" name="filterDate" id="filterDate" />
 					</form>
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 						<div class="btn-group" role="group" aria-label="First group">
@@ -249,7 +249,7 @@
     }
 	
 	document.body.addEventListener('touchstart', () => { document.body.classList.add('touched'); });
-	document.querySelector('#todayDate').value = new Date().toDateString();
+	document.querySelector('#filterDate').value = new Date().toDateString();
 	document.querySelector('#displayTodayDate').innerHTML = new Date().toDateString();
 </script>
 <?php is_null($query) ?? mysqli_free_result($query); ?>
