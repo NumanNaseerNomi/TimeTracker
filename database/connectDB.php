@@ -1,5 +1,6 @@
 <?php
 // production configs
+
 // $env =
 // [
 //     'hostName' => 'localhost',
@@ -9,6 +10,7 @@
 // ];
 
 // staging configs
+
 // $env =
 // [
 //     'hostName' => 'localhost',
@@ -18,6 +20,7 @@
 // ];
 
 // local configs
+
 $env =
 [
     'hostName' => 'localhost',
