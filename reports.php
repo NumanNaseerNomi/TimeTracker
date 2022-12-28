@@ -262,8 +262,9 @@
 
 	function downloadData()
     {
+		let dateRange = <?php echo  "'" . $displayDateRange . "'" ?>;
 		let fileData = <?php echo json_encode($records) ?>;
-		let fileName = 'TimeTrackerRecord(' + filterOption + ').csv';
+		let fileName = 'TimeTrackerRecord(' + dateRange + ').csv';
 		let csvData = convertToCsv(fileData);
 		
 		downloadFile(fileName, csvData);
