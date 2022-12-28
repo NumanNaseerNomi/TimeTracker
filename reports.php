@@ -200,27 +200,25 @@
 					<div class="modal-header">
 						<h1 class="modal-title fs-5" id="dateRangePickerLabel">Pick Date Range</h1>
 					</div>
-					<form method="post" action="database/updateRecord.php">
+					<form method="post" action="reports.php">
 						<div class="modal-body">
 							<div class="card-body pb-0">
-								<input type="hidden" name="recordId" value="">
-								<input type="hidden" name="filterBy" value="">
-								<input type="hidden" name="filterDate" />
+								<input type="hidden" name="filterBy" value="custom">
 								<div class="row g-3">
 									<div class="col-md-6">
 										<label for="inputEmail4" class="form-label">Date From</label>
-										<input class="form-control" type="date" name="checkinTimestamp" value="" />
+										<input class="form-control" type="date" name="dateRangeFrom" required />
 									</div>
 									<div class="col-md-6">
 										<label for="inputEmail4" class="form-label">Date To</label>
-										<input class="form-control" type="date" name="checkoutTimestamp" value="" />
+										<input class="form-control" type="date" name="dateRangeTo" required />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn btn-primary">Save</button>
+							<button type="button" class="btn btn-danger" data-bs-dismiss="modal" onClick="window.location.reload();">Cancel</button>
+							<button type="submit" class="btn btn-primary">Filter</button>
 						</div>
 					</form>
 				</div>
