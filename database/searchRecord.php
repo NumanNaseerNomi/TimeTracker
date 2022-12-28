@@ -101,7 +101,7 @@ switch($filterBy)
         $dateRangeFrom = $_POST['dateRangeFrom'];
         $dateRangeTo = $_POST['dateRangeTo'];
         $displayDateRange = date('d-m-Y', strtotime($dateRangeFrom)) . ' -- ' . date('d-m-Y', strtotime($dateRangeTo));
-        $sql = "SELECT * FROM records WHERE checkout IS NOT NULL ORDER BY id DESC";
+        $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$dateRangeFrom' AND '$dateRangeTo' AND checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
 }
