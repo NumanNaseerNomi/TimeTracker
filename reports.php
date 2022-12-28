@@ -1,10 +1,4 @@
 <?php
-	// header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
-	// header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-	// header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-	// header("Cache-Control: post-check=0, pre-check=0", false);
-	// header("Pragma: no-cache");
-
 	require_once("./database/searchRecord.php");
 	$totalSeconds = 0;
 ?>
@@ -38,7 +32,8 @@
 					</form>
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 						<div class="btn-group" role="group" aria-label="First group">
-							<span class="h4" id="displayTodayDate"></span>
+							<!-- <span class="h4" id="displayTodayDate"></span> -->
+							<span class="h4" id="displayDateRange"></span>
 						</div>
 						<div class="input-group">
 							<button type="button" class="btn btn-link" onclick="downloadData()">
@@ -258,6 +253,6 @@
 	
 	document.body.addEventListener('touchstart', () => { document.body.classList.add('touched'); });
 	document.querySelectorAll("input[name='filterDate']").forEach((item) => { item.value = new Date().toDateString(); });
-	document.querySelector('#displayTodayDate').innerHTML = new Date().toDateString();
+	// document.querySelector('#displayTodayDate').innerHTML = new Date().toDateString() + " -- " + new Date().toLocaleTimeString();
 </script>
 <?php is_null($query) ?? mysqli_free_result($query); ?>
