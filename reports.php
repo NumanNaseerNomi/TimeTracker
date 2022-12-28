@@ -194,49 +194,38 @@
 				</div>
 			</div>
 		</div>
-
-
-
 		<div class="modal fade" id="dateRangePicker" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dateRangePickerLabel" aria-hidden="true">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h1 class="modal-title fs-5" id="dateRangePickerLabel">Edit</h1>
-												</div>
-												<form method="post" action="database/updateRecord.php">
-													<div class="modal-body">
-														<div class="card-body pb-0">
-															<input type="hidden" name="recordId" value="">
-															<input type="hidden" name="filterBy" value="">
-															<input type="hidden" name="filterDate" />
-															<div class="row g-3">
-																<div class="col-md-6">
-																	<label for="inputEmail4" class="form-label">Clock In</label>
-																	<input class="form-control" type="datetime-local" name="checkinTimestamp" value="" />
-																</div>
-																<div class="col-md-6">
-																	<label for="inputEmail4" class="form-label">Clock Out</label>
-																	<input class="form-control" type="datetime-local" name="checkoutTimestamp" value="" />
-																</div>
-																<div class="col-12">
-																	<label for="inputAddress" class="form-label">Description</label>
-																	<textarea class="form-control" id="inputAddress" rows="3" name="description"></textarea>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-														<button type="submit" class="btn btn-primary">Save</button>
-													</div>
-												</form>
-											</div>
-										</div>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="dateRangePickerLabel">Pick Date Range</h1>
+					</div>
+					<form method="post" action="database/updateRecord.php">
+						<div class="modal-body">
+							<div class="card-body pb-0">
+								<input type="hidden" name="recordId" value="">
+								<input type="hidden" name="filterBy" value="">
+								<input type="hidden" name="filterDate" />
+								<div class="row g-3">
+									<div class="col-md-6">
+										<label for="inputEmail4" class="form-label">Date From</label>
+										<input class="form-control" type="date" name="checkinTimestamp" value="" />
 									</div>
-
-
-
-
+									<div class="col-md-6">
+										<label for="inputEmail4" class="form-label">Date To</label>
+										<input class="form-control" type="date" name="checkoutTimestamp" value="" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 		<?php include "./components/navbar.php"; ?>
 	</body>
 </html>
