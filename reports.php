@@ -33,7 +33,7 @@
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 						<div class="btn-group" role="group" aria-label="First group">
 							<!-- <span class="h4" id="displayTodayDate"></span> -->
-							<span class="h4" id="displayDateRange"></span>
+							<span class="h4" id="displayDateRange"><?php echo $displayDateRange ?></span>
 						</div>
 						<div class="input-group">
 							<button type="button" class="btn btn-link" onclick="downloadData()">
