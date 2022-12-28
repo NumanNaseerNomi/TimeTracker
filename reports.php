@@ -32,8 +32,9 @@
 					</form>
 					<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 						<div class="btn-group" role="group" aria-label="First group">
-							<!-- <span class="h4" id="displayTodayDate"></span> -->
-							<span class="h4" id="displayDateRange"><?php echo $displayDateRange ?></span>
+							<span class="h4">
+								<?php echo $displayDateRange ?>
+							</span>
 						</div>
 						<div class="input-group">
 							<button type="button" class="btn btn-link" onclick="downloadData()">
@@ -253,6 +254,5 @@
 	
 	document.body.addEventListener('touchstart', () => { document.body.classList.add('touched'); });
 	document.querySelectorAll("input[name='filterDate']").forEach((item) => { item.value = new Date().toDateString(); });
-	// document.querySelector('#displayTodayDate').innerHTML = new Date().toDateString() + " -- " + new Date().toLocaleTimeString();
 </script>
 <?php is_null($query) ?? mysqli_free_result($query); ?>
