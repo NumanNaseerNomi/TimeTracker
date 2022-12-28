@@ -38,7 +38,7 @@
 						</div>
 						<div class="input-group">
 							<button type="button" class="btn btn-link" onclick="downloadData()">
-								<i class="fas fa-file-download text-dark fs-5"></i>
+								<i class="fa fa-file-csv text-dark fs-5"></i>
 							</button>
 						</div>
 					</div>
@@ -263,24 +263,31 @@
 	function downloadData()
     {
 		let fileData = <?php echo json_encode($records) ?>;
-		let fileName = 'TimeTrackerRecord(' + filterOption + ').json';
-		let fileType = 'application/json';
-
-        let file = new Blob([JSON.stringify(fileData)], {type: fileType});
-        let isIE = /*@cc_on!@*/false || !!document.documentMode;
-
-        if(isIE)
-        {
-            window.navigator.msSaveOrOpenBlob(file, fileName);
-        }
-        else
-        {
-            let a = document.createElement('a');
-            a.href = URL.createObjectURL(file);
-            a.download = fileName;
-            a.click();
-        }
+		let fileName = 'TimeTrackerRecord(' + filterOption + ').csv';
+		let csvData = convertToCsv(fileData);
+		
+		downloadFile(fileName, csvData);
     }
+
+	function convertToCsv(arr)
+	{
+		const keys = Object.keys(arr[0]);
+		const replacer = (_key, value) => value === null ? '' : value;
+    	const processRow = row => keys.map(key => JSON.stringify(row[key], replacer)).join(',');
+    	return [ keys.join(','), ...arr.map(processRow) ].join('\r\n');
+	};
+
+
+	function downloadFile(fileName, data)
+	{
+		let link = document.createElement('a');
+		link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+		link.setAttribute('download', fileName);
+		link.style.display = 'none';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
 
 	function applyFilter(event)
 	{
