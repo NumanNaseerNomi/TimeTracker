@@ -84,8 +84,8 @@ switch($filterBy)
     case 'thisYear':
     {
         $fromDate = date('Y-m-d', strtotime('first day of january this year'));
-        $toDate = date('Y-m-d', strtotime('last day of december this year'));
-        $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY id DESC";
+        $displayDateRange = date('d-m-Y', strtotime($fromDate)) . ' -- ' . date('d-m-Y', strtotime($todayDate));
+        $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$fromDate' AND '$todayDate' AND checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
     case 'lastYear':
