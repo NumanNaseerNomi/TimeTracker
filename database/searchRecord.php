@@ -54,6 +54,7 @@ switch($filterBy)
     case 'thisWeek':
     {
         $fromDate = date('Y-m-d', strtotime($todayDate . "monday this week"));
+        $displayDateRange = date('d-m-Y', strtotime($fromDate)) . ' -- ' . date('d-m-Y', strtotime($todayDate));
         $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$fromDate' AND '$todayDate' AND checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
