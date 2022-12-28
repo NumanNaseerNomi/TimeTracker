@@ -17,7 +17,7 @@
 				<div class="col-md-4 offset-md-4 mb-5">
 					<h1 class="p-5">Reports</h1>
 					<form method="post" action="reports.php">
-						<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="filterBy" onchange="this.form.submit()">
+						<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="filterBy" onchange="applyFilter(this)">
 							<option value="today">Today</option>
 							<option value="yesterday">Yesterday</option>
 							<option value="thisWeek">This Week</option>
@@ -26,7 +26,7 @@
 							<option value="lastMonth">Last Month</option>
 							<option value="thisYear">This Year</option>
 							<option value="lastYear">Last Year</option>
-							<option value="all">All</option>
+							<option value="custom">Custom</option>
 						</select>
 						<input type="hidden" name="filterDate" />
 					</form>
@@ -194,6 +194,49 @@
 				</div>
 			</div>
 		</div>
+
+
+
+		<div class="modal fade" id="dateRangePicker" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dateRangePickerLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h1 class="modal-title fs-5" id="dateRangePickerLabel">Edit</h1>
+												</div>
+												<form method="post" action="database/updateRecord.php">
+													<div class="modal-body">
+														<div class="card-body pb-0">
+															<input type="hidden" name="recordId" value="">
+															<input type="hidden" name="filterBy" value="">
+															<input type="hidden" name="filterDate" />
+															<div class="row g-3">
+																<div class="col-md-6">
+																	<label for="inputEmail4" class="form-label">Clock In</label>
+																	<input class="form-control" type="datetime-local" name="checkinTimestamp" value="" />
+																</div>
+																<div class="col-md-6">
+																	<label for="inputEmail4" class="form-label">Clock Out</label>
+																	<input class="form-control" type="datetime-local" name="checkoutTimestamp" value="" />
+																</div>
+																<div class="col-12">
+																	<label for="inputAddress" class="form-label">Description</label>
+																	<textarea class="form-control" id="inputAddress" rows="3" name="description"></textarea>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+														<button type="submit" class="btn btn-primary">Save</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+
+
+
+
 		<?php include "./components/navbar.php"; ?>
 	</body>
 </html>
@@ -251,6 +294,19 @@
             a.click();
         }
     }
+
+	function applyFilter(event)
+	{
+		if(event.value == 'custom')
+		{
+			const dateRangePickerModal = new bootstrap.Modal('#dateRangePicker');
+			dateRangePickerModal.show();
+		}
+		else
+		{
+			event.form.submit();
+		}
+	}
 	
 	document.body.addEventListener('touchstart', () => { document.body.classList.add('touched'); });
 	document.querySelectorAll("input[name='filterDate']").forEach((item) => { item.value = new Date().toDateString(); });
