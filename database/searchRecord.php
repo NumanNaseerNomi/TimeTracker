@@ -40,13 +40,14 @@ switch($filterBy)
 {
     case 'today':
     {
-        $sql = "SELECT * FROM records WHERE Date(checkin) = '$todayDate' && checkout IS NOT NULL ORDER BY id DESC";
         $displayDateRange = date('d-m-Y', strtotime($todayDate));
+        $sql = "SELECT * FROM records WHERE Date(checkin) = '$todayDate' && checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
     case 'yesterday':
     {
         $yesterday = date('Y-m-d', strtotime($todayDate . "-1 day"));
+        $displayDateRange = date('d-m-Y', strtotime($yesterday));
         $sql = "SELECT * FROM records WHERE Date(checkin) = '$yesterday' && checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
