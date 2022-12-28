@@ -7,7 +7,7 @@ if(isset($_POST['filterBy']))
 }
 elseif(isset($_GET['filterBy']))
 {
-    $filers = ['today', 'yesterday', 'thisWeek', 'lastWeek', 'lastWeek', 'thisMonth', 'lastMonth', 'thisYear', 'lastYear', 'all'];
+    $filers = ['today', 'yesterday', 'thisWeek', 'lastWeek', 'lastWeek', 'thisMonth', 'lastMonth', 'thisYear', 'lastYear', 'custom'];
 
     if(in_array($_GET['filterBy'], $filers))
     {
@@ -98,6 +98,9 @@ switch($filterBy)
     }
     case 'custom':
     {
+        $dateRangeFrom = $_POST['dateRangeFrom'];
+        $dateRangeTo = $_POST['dateRangeTo'];
+        $displayDateRange = date('d-m-Y', strtotime($dateRangeFrom)) . ' -- ' . date('d-m-Y', strtotime($dateRangeTo));
         $sql = "SELECT * FROM records WHERE checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
