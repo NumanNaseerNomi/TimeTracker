@@ -69,6 +69,7 @@ switch($filterBy)
     case 'thisMonth':
     {
         $fromDate = date('Y-m-d', strtotime($todayDate . 'first day of this month'));
+        $displayDateRange = date('d-m-Y', strtotime($fromDate)) . ' -- ' . date('d-m-Y', strtotime($todayDate));
         $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$fromDate' AND '$todayDate' AND checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
