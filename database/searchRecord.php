@@ -96,7 +96,7 @@ switch($filterBy)
         $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
-    case 'all':
+    case 'custom':
     {
         $sql = "SELECT * FROM records WHERE checkout IS NOT NULL ORDER BY id DESC";
         break;
