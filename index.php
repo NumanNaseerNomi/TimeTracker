@@ -1,4 +1,8 @@
 <?php
+	header("Cache-Control: no-cache, must-revalidate");
+	header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+	header("Content-Type: application/xml; charset=utf-8");
+
 	require_once("./database/connectDB.php");
 
 	$sql = "SELECT * FROM records WHERE checkout IS NULL ORDER BY id DESC LIMIT 1";
@@ -11,9 +15,6 @@
 		<title>Time Tracker</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
 		<link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="./plugins/fontawesome/css/all.min.css">
 	</head>
