@@ -41,6 +41,7 @@ switch($filterBy)
     case 'today':
     {
         $sql = "SELECT * FROM records WHERE Date(checkin) = '$todayDate' && checkout IS NOT NULL ORDER BY id DESC";
+        $displayDateRange = date('d-m-Y', strtotime($todayDate));
         break;
     }
     case 'yesterday':
