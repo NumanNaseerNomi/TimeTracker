@@ -9,8 +9,11 @@
 <html>
 	<head>
 		<title>Time Tracker</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
 		<link rel="stylesheet" href="./plugins/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="./plugins/fontawesome/css/all.min.css">
 	</head>
