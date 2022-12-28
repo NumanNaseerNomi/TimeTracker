@@ -77,6 +77,7 @@ switch($filterBy)
     {
         $fromDate = date('Y-m-d', strtotime($todayDate . 'first day of last month'));
         $toDate = date('Y-m-d', strtotime($todayDate . 'last day of last month'));
+        $displayDateRange = date('d-m-Y', strtotime($fromDate)) . ' -- ' . date('d-m-Y', strtotime($toDate));
         $sql = "SELECT * FROM records WHERE Date(checkin) BETWEEN '$fromDate' AND '$toDate' AND checkout IS NOT NULL ORDER BY id DESC";
         break;
     }
